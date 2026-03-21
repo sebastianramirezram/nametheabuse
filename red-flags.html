@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red Flags — NameTheAbuse</title>
+  <meta name="description" content="Recognize the warning signs of abusive and controlling relationships — jealousy, isolation, phone monitoring, financial control, and more." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .accordion-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      background: var(--white);
+    }
+    .accordion-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      transition: background var(--transition);
+    }
+    .accordion-btn:hover { background: var(--bg-alt); }
+    .accordion-btn.open { background: rgba(168, 197, 218, 0.15); }
+    .accordion-chevron {
+      font-style: normal;
+      font-size: 1.1rem;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .accordion-btn.open .accordion-chevron { transform: rotate(180deg); }
+    .accordion-body {
+      display: none;
+      padding: 0 1.5rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .accordion-body.open { display: block; }
+    .accordion-body p { margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem; }
+    .accordion-body ul { margin-top: 0.75rem; color: var(--text-muted); font-size: 0.95rem; }
+    .accordion-body .callout { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="index.html" class="nav-logo">Name<span>The</span>Abuse</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="what-is-abuse.html">What is Abuse?</a></li>
+      <li><a href="red-flags.html" class="active">Red Flags</a></li>
+      <li><a href="structural-violence.html">Structural Violence</a></li>
+      <li><a href="methods.html">Methods</a></li>
+      <li><a href="resources.html">Resources</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang-target="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" data-lang-target="es" aria-pressed="false">ES</button>
+        <button class="lang-btn" data-lang-target="zh" aria-pressed="false">中文</button>
+        <button class="lang-btn" data-lang-target="pt" aria-pressed="false">PT</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <div data-lang="en" class="active">
+      <span class="eyebrow">Warning Signs</span>
+      <h1>Red Flags in Relationships</h1>
+      <p>These are behaviors that — especially in patterns — can indicate something harmful is happening. Each one is worth taking seriously.</p>
+    </div>
+    <div data-lang="es">
+      <span class="eyebrow">Señales de advertencia</span>
+      <h1>Señales de alerta en las relaciones</h1>
+      <p>Estos son comportamientos que — especialmente en patrones — pueden indicar que algo dañino está ocurriendo. Cada uno merece ser tomado en serio.</p>
+    </div>
+    <div data-lang="zh">
+      <span class="eyebrow">警告信号</span>
+      <h1>关系中的危险信号</h1>
+      <p>这些行为——尤其是形成模式时——可能表明正在发生有害的事情。每一个都值得认真对待。</p>
+    </div>
+    <div data-lang="pt">
+      <span class="eyebrow">Sinais de Alerta</span>
+      <h1>Sinais de Alerta em Relacionamentos</h1>
+      <p>Esses são comportamentos que — especialmente em padrões — podem indicar que algo prejudicial está acontecendo. Cada um merece ser levado a sério.</p>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container" style="max-width: 820px;">
+
+    <div class="callout callout-normal" style="margin-top:0; margin-bottom: 2.5rem;">
+      <p class="callout-label">Before you read</p>
+      <div data-lang="en" class="active">
+        <p>One red flag doesn't always mean abuse. Context matters. But if several of these feel familiar — or if one feels very familiar — that's worth pausing on. This page is here to help you think, not to diagnose anyone.</p>
+      </div>
+      <div data-lang="es">
+        <p>Una señal de alerta por sí sola no siempre significa abuso. El contexto importa. Pero si varios de estos se sienten familiares — o si uno se siente muy familiar — vale la pena detenerse. Esta página está aquí para ayudarte a pensar, no para diagnosticar a nadie.</p>
+      </div>
+      <div data-lang="zh">
+        <p>一个危险信号并不总意味着虐待。背景很重要。但如果其中几个感觉很熟悉——或者某一个感觉非常熟悉——那值得停下来思考。这个页面是为了帮助你思考，而不是诊断任何人。</p>
+      </div>
+      <div data-lang="pt">
+        <p>Um sinal de alerta por si só não significa sempre abuso. O contexto importa. Mas se vários deles parecerem familiares — ou se um parecer muito familiar — vale a pena pausar. Esta página está aqui para ajudá-lo a pensar, não para diagnosticar ninguém.</p>
+      </div>
+    </div>
+
+    <!-- Accordion Red Flags -->
+    <div id="red-flags-accordion">
+
+      <!-- 1. Jealousy -->
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <div>
+            <div data-lang="en" class="active">Jealousy framed as love or protection</div>
+            <div data-lang="es">Celos disfrazados de amor o protección</div>
+            <div data-lang="zh">以爱或保护为名的嫉妒</div>
+            <div data-lang="pt">Ciúme disfarçado de amor ou proteção</div>
+          </div>
+          <em class="accordion-chevron">▾</em>
+        </button>
+        <div class="accordion-body">
+          <div data-lang="en" class="active">
+            <p>Phrases like "I'm jealous because I love you" or "I just don't want anyone else to have you" normalize possessiveness. Healthy love doesn't require controlling who someone talks to.</p>
+            <ul>
+              <li>Getting angry when you talk to certain people</li>
+              <li>Accusing you of flirting when you weren't</li>
+              <li>Making scenes in public out of jealousy</li>
+            </ul>
+            <div class="callout callout-reflect"><p class="callout-label">Reflect</p><p>Do you find yourself changing your behavior to avoid triggering their jealousy?</p></div>
+          </div>
+          <div data-lang="es">
+            <p>Frases como "soy celoso porque te amo" o "solo no quiero que nadie más te tenga" normalizan la posesividad. El amor sano no requiere controlar con quién habla alguien.</p>
+            <ul>
+              <li>Enojarse cuando hablas con ciertas personas</li>
+              <li>Acusarte de coquetear cuando no lo hiciste</li>
+              <li>Hacer escenas en público por celos</li>
+            </ul>
+            <div class="callout callout-reflect"><p class="callout-label">Reflexiona</p><p>¿Te encuentras cambiando tu comportamiento para evitar provocar sus celos?</p></div>
+          </div>
+          <div data-lang="zh">
+            <p>"我嫉妒是因为我爱你"或"我只是不想让别人拥有你"这类话语使占有欲正常化。健康的爱不需要控制别人跟谁说话。</p>
+            <ul>
+              <li>当你与某些人交谈时生气</li>
+              <li>在你没有调情时指责你调情</li>
+              <li>因嫉妒在公共场合制造事端</li>
+            </ul>
+            <div class="callout callout-reflect"><p class="callout-label">反思</p><p>你是否发现自己在改变行为，以避免触发他们的嫉妒？</p></div>
+          </div>
+          <div data-lang="pt">
+            <p>Frases como "tenho ciúme porque te amo" ou "só não quero que ninguém mais te tenha" normalizam a possessividade. O amor saudável não requer controlar com quem alguém fala.</p>
+            <ul>
+              <li>Ficar bravo quando você fala com certas pessoas</li>
+              <li>Acusá-lo de flertar quando não estava</li>
+              <li>Fazer cenas em público por ciúme</li>
+            </ul>
+            <div class="callout callout-reflect"><p class="callout-label">Reflita</p><p>Você se encontra mudando seu comportamento para evitar provocar o ciúme deles?</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Phone checking -->
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <div>
+            <div data-lang="en" class="active">Monitoring your phone or digital life</div>
+            <div data-lang="es">Vigilar tu teléfono o vida digital</div>
+            <div data-lang="zh">监控你的手机或数字生活</div>
+            <div data-lang="pt">Monitorar seu celular ou vida digital</div>
+          </div>
+          <em class="accordion-chevron">▾</em>
+        </button>
+        <div class="accordion-body">
+          <div data-lang="en" class="active">
+            <p>Privacy is a basic right in any relationship. Demanding constant access to your phone, accounts, or conversations is a form of surveillance — not love.</p>
+            <ul>
+              <li>Demanding your passwords or PINs</li>
+              <li>Reading your messages without permission</li>
+              <li>Installing tracking or monitoring software</li>
+              <li>Getting angry if you don't respond immediately</li>
+            </ul>
+          </div>
+          <div data-lang="es">
+            <p>La privacidad es un derecho básico en cualquier relación. Exigir acceso constante a tu teléfono, cuentas o conversaciones es una forma de vigilancia, no de amor.</p>
+            <ul>
+              <li>Exigir tus contraseñas o PIN</li>
+              <li>Leer tus mensajes sin permiso</li>
+              <li>Instalar software de rastreo o monitoreo</li>
+              <li>Enojarse si no respondes de inmediato</li>
+            </ul>
+          </div>
+          <div data-lang="zh">
+            <p>隐私是任何关系中的基本权利。要求持续访问你的手机、账户或对话是一种监控行为，而非爱。</p>
+            <ul>
+              <li>要求你的密码或PIN码</li>
+              <li>未经许可阅读你的消息</li>
+              <li>安装追踪或监控软件</li>
+              <li>如果你没有立即回复就生气</li>
+            </ul>
+          </div>
+          <div data-lang="pt">
+            <p>A privacidade é um direito básico em qualquer relacionamento. Exigir acesso constante ao seu celular, contas ou conversas é uma forma de vigilância — não amor.</p>
+            <ul>
+              <li>Exigir suas senhas ou PINs</li>
+              <li>Ler suas mensagens sem permissão</li>
+              <li>Instalar software de rastreamento ou monitoramento</li>
+              <li>Ficar bravo se você não responder imediatamente</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Location sharing -->
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <div>
+            <div data-lang="en" class="active">Forced or pressured location sharing</div>
+            <div data-lang="es">Compartir ubicación forzada o bajo presión</div>
+            <div data-lang="zh">被迫或被施压共享位置</div>
+            <div data-lang="pt">Compartilhamento de localização forçado ou sob pressão</div>
+          </div>
+          <em class="accordion-chevron">▾</em>
+        </button>
+        <div class="accordion-body">
+          <div data-lang="en" class="active">
+            <p>Mutual, voluntary location sharing can be fine. But being required to share your location at all times — and facing consequences if you don't — is control, not care.</p>
+            <ul>
+              <li>"If you have nothing to hide, why won't you share your location?"</li>
+              <li>Checking your location constantly</li>
+              <li>Showing up unexpectedly to verify where you are</li>
+            </ul>
+            <div class="callout callout-reflect"><p class="callout-label">Reflect</p><p>Did you feel like you had a real choice when you agreed to share your location?</p></div>
+          </div>
+          <div data-lang="es">
+            <p>Compartir la ubicación de forma mutua y voluntaria puede estar bien. Pero que te obliguen a compartir tu ubicación en todo momento — y enfrentar consecuencias si no lo haces — es control, no cuidado.</p>
+            <ul>
+              <li>"Si no tienes nada que esconder, ¿por qué no compartes tu ubicación?"</li>
+              <li>Revisar tu ubicación constantemente</li>
+              <li>Aparecer inesperadamente para verificar dónde estás</li>
+            </ul>
+            <div class="callout callout-reflect"><p class="callout-label">Reflexiona</p><p>¿Sentiste que tenías una verdadera elección cuando aceptaste compartir tu ubicación?</p></div>
+          </div>
+          <div data-lang="zh">
+            <p>相互、自愿的位置共享可以没问题。但被要求随时共享位置——如果不这样做就会有后果——是控制，而不是关心。</p>
+            <ul>
+              <li>"如果你没什么好隐瞒的，为什么不分享你的位置？"</li>
+              <li>不断查看你的位置</li>
+              <li>意外出现以确认你在哪里</li>
+            </ul>
+            <div class="callout callout-reflect"><p class="callout-label">反思</p><p>当你同意共享位置时，你是否感觉自己有真正的选择？</p></div>
+          </div>
+          <div data-lang="pt">
+            <p>O compartilhamento mútuo e voluntário de localização pode ser normal. Mas ser obrigado a compartilhar sua localização o tempo todo — e enfrentar consequências se não o fizer — é controle, não cuidado.</p>
+            <ul>
+              <li>"Se você não tem nada a esconder, por que não compartilha sua localização?"</li>
+              <li>Verificar sua localização constantemente</li>
+              <li>Aparecer inesperadamente para verificar onde você está</li>
+            </ul>
+            <div class="callout callout-reflect"><p class="callout-label">Reflita</p><p>Você sentiu que tinha uma escolha real quando concordou em compartilhar sua localização?</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Financial control -->
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <div>
+            <div data-lang="en" class="active">Financial control and economic dependency</div>
+            <div data-lang="es">Control financiero y dependencia económica</div>
+            <div data-lang="zh">财务控制与经济依赖</div>
+            <div data-lang="pt">Controle financeiro e dependência econômica</div>
+          </div>
+          <em class="accordion-chevron">▾</em>
+        </button>
+        <div class="accordion-body">
+          <div data-lang="en" class="active">
+            <p>Economic abuse is one of the most effective ways to trap someone in a relationship. It can be subtle at first — "I'll take care of the finances" — before becoming restrictive.</p>
+            <ul>
+              <li>Controlling all the money and giving an "allowance"</li>
+              <li>Sabotaging employment or education</li>
+              <li>Creating debt in your name without consent</li>
+              <li>Criticizing or punishing every purchase</li>
+            </ul>
+          </div>
+          <div data-lang="es">
+            <p>El abuso económico es una de las formas más efectivas de atrapar a alguien en una relación. Puede ser sutil al principio — "yo me encargaré de las finanzas" — antes de volverse restrictivo.</p>
+            <ul>
+              <li>Controlar todo el dinero y dar una "mesada"</li>
+              <li>Sabotear el empleo o la educación</li>
+              <li>Crear deudas a tu nombre sin consentimiento</li>
+              <li>Criticar o castigar cada compra</li>
+            </ul>
+          </div>
+          <div data-lang="zh">
+            <p>经济虐待是将人困在关系中最有效的方式之一。起初可能很微妙——"我来管理财务"——然后变得具有限制性。</p>
+            <ul>
+              <li>控制所有金钱并给予"零花钱"</li>
+              <li>破坏就业或教育机会</li>
+              <li>未经同意以你的名义产生债务</li>
+              <li>批评或惩罚每一次消费</li>
+            </ul>
+          </div>
+          <div data-lang="pt">
+            <p>O abuso econômico é uma das formas mais eficazes de prender alguém em um relacionamento. Pode ser sutil no início — "eu cuido das finanças" — antes de se tornar restritivo.</p>
+            <ul>
+              <li>Controlar todo o dinheiro e dar uma "mesada"</li>
+              <li>Sabotar o emprego ou a educação</li>
+              <li>Criar dívidas em seu nome sem consentimento</li>
+              <li>Criticar ou punir cada compra</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Isolation -->
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <div>
+            <div data-lang="en" class="active">Isolating you from friends and family</div>
+            <div data-lang="es">Aislarte de amigos y familia</div>
+            <div data-lang="zh">将你与朋友和家人隔离</div>
+            <div data-lang="pt">Isolar você de amigos e família</div>
+          </div>
+          <em class="accordion-chevron">▾</em>
+        </button>
+        <div class="accordion-body">
+          <div data-lang="en" class="active">
+            <p>Isolation is often gradual. It may start with negative comments about your friends, then escalate to controlling who you see and when. Isolation removes your support system — making it harder to leave.</p>
+            <ul>
+              <li>Criticizing or belittling your friends and family</li>
+              <li>Making you feel guilty for spending time with others</li>
+              <li>Creating conflict with people you're close to</li>
+              <li>Insisting you spend all your free time together</li>
+            </ul>
+          </div>
+          <div data-lang="es">
+            <p>El aislamiento suele ser gradual. Puede comenzar con comentarios negativos sobre tus amigos, luego escalar hasta controlar a quién ves y cuándo. El aislamiento elimina tu red de apoyo, lo que hace más difícil salir.</p>
+            <ul>
+              <li>Criticar o menospreciar a tus amigos y familia</li>
+              <li>Hacerte sentir culpable por pasar tiempo con otros</li>
+              <li>Crear conflictos con personas cercanas a ti</li>
+              <li>Insistir en que pasen todo el tiempo libre juntos</li>
+            </ul>
+          </div>
+          <div data-lang="zh">
+            <p>孤立通常是渐进的。可能从对你朋友的负面评价开始，然后升级为控制你见谁、什么时候见。孤立会摧毁你的支持系统——让你更难离开。</p>
+            <ul>
+              <li>批评或贬低你的朋友和家人</li>
+              <li>让你因为和别人在一起而感到内疚</li>
+              <li>与你亲近的人制造冲突</li>
+              <li>坚持要求你们所有空闲时间都在一起</li>
+            </ul>
+          </div>
+          <div data-lang="pt">
+            <p>O isolamento costuma ser gradual. Pode começar com comentários negativos sobre seus amigos, depois escalar para controlar quem você vê e quando. O isolamento remove sua rede de apoio — tornando mais difícil sair.</p>
+            <ul>
+              <li>Criticar ou menosprezar seus amigos e família</li>
+              <li>Fazer você se sentir culpado por passar tempo com outros</li>
+              <li>Criar conflitos com pessoas próximas a você</li>
+              <li>Insistir em que passem todo o tempo livre juntos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Gaslighting -->
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <div>
+            <div data-lang="en" class="active">Gaslighting — making you doubt your reality</div>
+            <div data-lang="es">Gaslighting — hacerte dudar de tu realidad</div>
+            <div data-lang="zh">煤气灯效应——让你怀疑自己的现实</div>
+            <div data-lang="pt">Gaslighting — fazendo você duvidar da sua realidade</div>
+          </div>
+          <em class="accordion-chevron">▾</em>
+        </button>
+        <div class="accordion-body">
+          <div data-lang="en" class="active">
+            <p>Gaslighting is a form of psychological manipulation where someone causes you to question your own memory, perception, or sanity. It often involves denial, misdirection, and contradiction.</p>
+            <ul>
+              <li>"That never happened."</li>
+              <li>"You're too sensitive."</li>
+              <li>"You're imagining things."</li>
+              <li>"Everyone agrees with me, not you."</li>
+            </ul>
+            <div class="callout callout-reflect"><p class="callout-label">Reflect</p><p>Do you often find yourself wondering whether your feelings are "reasonable" or "too much"?</p></div>
+          </div>
+          <div data-lang="es">
+            <p>El gaslighting es una forma de manipulación psicológica en la que alguien te hace cuestionar tu propia memoria, percepción o cordura. A menudo implica negación, redirección y contradicción.</p>
+            <ul>
+              <li>"Eso nunca pasó."</li>
+              <li>"Eres demasiado sensible."</li>
+              <li>"Te lo estás imaginando."</li>
+              <li>"Todos están de acuerdo conmigo, no contigo."</li>
+            </ul>
+            <div class="callout callout-reflect"><p class="callout-label">Reflexiona</p><p>¿A menudo te preguntas si tus sentimientos son "razonables" o "demasiado"?</p></div>
+          </div>
+          <div data-lang="zh">
+            <p>煤气灯效应是一种心理操纵形式，让你质疑自己的记忆、感知或理智。它通常涉及否认、转移和矛盾。</p>
+            <ul>
+              <li>"那从来没有发生过。"</li>
+              <li>"你太敏感了。"</li>
+              <li>"你在想象事情。"</li>
+              <li>"每个人都同意我，而不是你。"</li>
+            </ul>
+            <div class="callout callout-reflect"><p class="callout-label">反思</p><p>你是否经常发现自己在想自己的感受是否"合理"或"太多了"？</p></div>
+          </div>
+          <div data-lang="pt">
+            <p>Gaslighting é uma forma de manipulação psicológica onde alguém faz você questionar sua própria memória, percepção ou sanidade. Geralmente envolve negação, desvio e contradição.</p>
+            <ul>
+              <li>"Isso nunca aconteceu."</li>
+              <li>"Você é muito sensível."</li>
+              <li>"Você está imaginando coisas."</li>
+              <li>"Todo mundo concorda comigo, não com você."</li>
+            </ul>
+            <div class="callout callout-reflect"><p class="callout-label">Reflita</p><p>Você frequentemente se pergunta se seus sentimentos são "razoáveis" ou "demais"?</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end accordion -->
+
+    <div class="text-center mt-4">
+      <a href="resources.html" class="btn btn-primary">
+        <div data-lang="en" class="active">Find Support</div>
+        <div data-lang="es">Encontrar apoyo</div>
+        <div data-lang="zh">寻找支持</div>
+        <div data-lang="pt">Encontrar Apoio</div>
+      </a>
+      <a href="what-is-abuse.html" class="btn btn-secondary" style="margin-left:1rem;">
+        <div data-lang="en" class="active">What is Abuse?</div>
+        <div data-lang="es">¿Qué es el abuso?</div>
+        <div data-lang="zh">什么是虐待？</div>
+        <div data-lang="pt">O que é Abuso?</div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Name<span>The</span>Abuse</a>
+        <div data-lang="en" class="active"><p>A free, open educational resource on abuse, control, and gender-based violence.</p></div>
+        <div data-lang="es"><p>Un recurso educativo gratuito y abierto sobre el abuso, el control y la violencia de género.</p></div>
+        <div data-lang="zh"><p>一个关于虐待、控制和基于性别暴力的免费开放教育资源。</p></div>
+        <div data-lang="pt"><p>Um recurso educacional gratuito e aberto sobre abuso, controle e violência de gênero.</p></div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="what-is-abuse.html">What is Abuse?</a></li>
+          <li><a href="red-flags.html">Red Flags</a></li>
+          <li><a href="structural-violence.html">Structural Violence</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <ul>
+          <li><a href="methods.html">Methods / AI</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html#team">Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><div data-lang="en" class="active">Need help now?</div><div data-lang="es">¿Necesitas ayuda?</div><div data-lang="zh">需要帮助？</div><div data-lang="pt">Precisa de ajuda?</div></h4>
+        <a href="resources.html" class="crisis-badge"><div data-lang="en" class="active">Go to Resources</div><div data-lang="es">Ir a recursos</div><div data-lang="zh">前往资源</div><div data-lang="pt">Ir para Recursos</div></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 NameTheAbuse. Open educational resource.</p>
+      <p><span data-lang="en" class="active">Not a crisis service.</span><span data-lang="es">No es un servicio de crisis.</span><span data-lang="zh">非危机服务。</span><span data-lang="pt">Não é um serviço de crise.</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+  function toggleAccordion(btn) {
+    const body = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.accordion-btn').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('open'));
+
+    if (!isOpen) {
+      btn.classList.add('open');
+      body.classList.add('open');
+    }
+  }
+</script>
+</body>
+</html>

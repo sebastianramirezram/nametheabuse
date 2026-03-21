@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources &amp; Help — NameTheAbuse</title>
+  <meta name="description" content="Crisis lines, support organizations, and guidance if you or someone you know needs help with abuse or domestic violence." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .resource-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: box-shadow var(--transition);
+    }
+    .resource-card:hover { box-shadow: 0 4px 16px var(--shadow); }
+    .resource-card h3 { margin-bottom: 0.4rem; font-size: 1.05rem; }
+    .resource-card .resource-type {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .resource-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .resource-card a.resource-link {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #5B8FA8;
+    }
+    .emergency-banner {
+      background: linear-gradient(135deg, rgba(191, 216, 210, 0.35), rgba(168, 197, 218, 0.35));
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .emergency-banner h2 { margin-bottom: 0.5rem; }
+    .emergency-banner p { color: var(--text-muted); max-width: 500px; margin: 0 auto 1.5rem; }
+    .phone-big {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="index.html" class="nav-logo">Name<span>The</span>Abuse</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="what-is-abuse.html">What is Abuse?</a></li>
+      <li><a href="red-flags.html">Red Flags</a></li>
+      <li><a href="structural-violence.html">Structural Violence</a></li>
+      <li><a href="methods.html">Methods</a></li>
+      <li><a href="resources.html" class="active">Resources</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang-target="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" data-lang-target="es" aria-pressed="false">ES</button>
+        <button class="lang-btn" data-lang-target="zh" aria-pressed="false">中文</button>
+        <button class="lang-btn" data-lang-target="pt" aria-pressed="false">PT</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <div data-lang="en" class="active">
+      <span class="eyebrow">Support &amp; Safety</span>
+      <h1>Resources &amp; Help</h1>
+      <p>If you or someone you know needs support, you are not alone. These resources are a starting point.</p>
+    </div>
+    <div data-lang="es">
+      <span class="eyebrow">Apoyo y seguridad</span>
+      <h1>Recursos y ayuda</h1>
+      <p>Si tú o alguien que conoces necesita apoyo, no estás solo/a. Estos recursos son un punto de partida.</p>
+    </div>
+    <div data-lang="zh">
+      <span class="eyebrow">支持与安全</span>
+      <h1>资源与帮助</h1>
+      <p>如果您或您认识的人需要支持，您并不孤单。这些资源是一个起点。</p>
+    </div>
+    <div data-lang="pt">
+      <span class="eyebrow">Apoio e Segurança</span>
+      <h1>Recursos e Ajuda</h1>
+      <p>Se você ou alguém que você conhece precisa de apoio, você não está sozinho/a. Esses recursos são um ponto de partida.</p>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+      <div data-lang="en" class="active">
+        <h2>If you are in immediate danger</h2>
+        <p>Call your local emergency number right away. In the US, that's 911. In the EU, it's 112.</p>
+        <p class="phone-big">911 / 112</p>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Emergency numbers vary by country — search for yours if you're unsure.</p>
+      </div>
+      <div data-lang="es">
+        <h2>Si estás en peligro inmediato</h2>
+        <p>Llama a tu número de emergencias local de inmediato. En EE.UU. es 911. En la UE es 112.</p>
+        <p class="phone-big">911 / 112</p>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Los números de emergencia varían según el país — busca el tuyo si no estás seguro/a.</p>
+      </div>
+      <div data-lang="zh">
+        <h2>如果您处于立即危险中</h2>
+        <p>立即拨打当地紧急电话。在美国是911。在欧盟是112。</p>
+        <p class="phone-big">911 / 112</p>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">紧急电话号码因国家而异——如果不确定，请搜索您所在国家的号码。</p>
+      </div>
+      <div data-lang="pt">
+        <h2>Se você estiver em perigo imediato</h2>
+        <p>Ligue para o número de emergência local imediatamente. No Brasil é 190 (polícia) ou 180 (violência contra a mulher). Na UE é 112.</p>
+        <p class="phone-big">190 / 180 / 112</p>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Os números de emergência variam por país — pesquise o seu se não tiver certeza.</p>
+      </div>
+    </div>
+
+    <!-- Crisis Lines -->
+    <div data-lang="en" class="active">
+      <div class="section-header" style="text-align:left; margin-bottom:1.5rem;">
+        <span class="eyebrow">Crisis Lines</span>
+        <h2>Talk to someone now</h2>
+      </div>
+    </div>
+    <div data-lang="es">
+      <div class="section-header" style="text-align:left; margin-bottom:1.5rem;">
+        <span class="eyebrow">Líneas de crisis</span>
+        <h2>Habla con alguien ahora</h2>
+      </div>
+    </div>
+    <div data-lang="zh">
+      <div class="section-header" style="text-align:left; margin-bottom:1.5rem;">
+        <span class="eyebrow">危机热线</span>
+        <h2>现在与某人交谈</h2>
+      </div>
+    </div>
+    <div data-lang="pt">
+      <div class="section-header" style="text-align:left; margin-bottom:1.5rem;">
+        <span class="eyebrow">Linhas de Crise</span>
+        <h2>Fale com alguém agora</h2>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <!-- USA -->
+      <div class="resource-card">
+        <span class="resource-type">🇺🇸 United States</span>
+        <h3>National Domestic Violence Hotline</h3>
+        <p>Free, confidential 24/7 support for anyone experiencing domestic violence or abuse.</p>
+        <p style="font-size:1.1rem; font-weight:700; color:var(--text);">1-800-799-7233</p>
+        <p style="font-size:0.85rem; color:var(--text-muted);">Text START to 88788 · Chat available online</p>
+      </div>
+
+      <!-- Mexico / Spanish -->
+      <div class="resource-card">
+        <span class="resource-type">🇲🇽 México</span>
+        <h3>INMUJERES / CNDH</h3>
+        <p>Línea de atención para mujeres en situación de violencia.</p>
+        <p style="font-size:1.1rem; font-weight:700; color:var(--text);">800-911-2000</p>
+        <p style="font-size:0.85rem; color:var(--text-muted);">Línea Mujer — gratuita, 24 horas</p>
+      </div>
+
+      <!-- Brazil / Portuguese -->
+      <div class="resource-card">
+        <span class="resource-type">🇧🇷 Brasil</span>
+        <h3>Central de Atendimento à Mulher</h3>
+        <p>Linha de apoio para mulheres em situação de violência, disponível 24h.</p>
+        <p style="font-size:1.1rem; font-weight:700; color:var(--text);">180</p>
+        <p style="font-size:0.85rem; color:var(--text-muted);">Gratuito · Funciona 24 horas</p>
+      </div>
+
+      <!-- Spain -->
+      <div class="resource-card">
+        <span class="resource-type">🇪🇸 España</span>
+        <h3>Línea 016 — Violencia de Género</h3>
+        <p>Información y asesoramiento jurídico en materia de violencia de género.</p>
+        <p style="font-size:1.1rem; font-weight:700; color:var(--text);">016</p>
+        <p style="font-size:0.85rem; color:var(--text-muted);">Gratuito y confidencial · 24 horas</p>
+      </div>
+
+      <!-- UK -->
+      <div class="resource-card">
+        <span class="resource-type">🇬🇧 United Kingdom</span>
+        <h3>National Domestic Abuse Helpline</h3>
+        <p>Free and confidential advice and support for women experiencing domestic abuse.</p>
+        <p style="font-size:1.1rem; font-weight:700; color:var(--text);">0808 2000 247</p>
+        <p style="font-size:0.85rem; color:var(--text-muted);">Run by Refuge · 24/7</p>
+      </div>
+
+      <!-- China -->
+      <div class="resource-card">
+        <span class="resource-type">🇨🇳 中国</span>
+        <h3>全国妇女权益保护热线</h3>
+        <p>提供家庭暴力和妇女权益保护相关咨询服务。</p>
+        <p style="font-size:1.1rem; font-weight:700; color:var(--text);">12338</p>
+        <p style="font-size:0.85rem; color:var(--text-muted);">妇女维权热线</p>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Online Resources -->
+    <div data-lang="en" class="active">
+      <div class="section-header" style="text-align:left; margin-bottom:1.5rem;">
+        <span class="eyebrow">Online Support</span>
+        <h2>Organizations &amp; information</h2>
+      </div>
+    </div>
+    <div data-lang="es">
+      <div class="section-header" style="text-align:left; margin-bottom:1.5rem;">
+        <span class="eyebrow">Apoyo en línea</span>
+        <h2>Organizaciones e información</h2>
+      </div>
+    </div>
+    <div data-lang="zh">
+      <div class="section-header" style="text-align:left; margin-bottom:1.5rem;">
+        <span class="eyebrow">在线支持</span>
+        <h2>组织与信息</h2>
+      </div>
+    </div>
+    <div data-lang="pt">
+      <div class="section-header" style="text-align:left; margin-bottom:1.5rem;">
+        <span class="eyebrow">Apoio Online</span>
+        <h2>Organizações e informações</h2>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="resource-card">
+        <span class="resource-type">Global</span>
+        <h3>UN Women</h3>
+        <div data-lang="en" class="active"><p>Global data, policy, and resources on gender equality and eliminating violence against women.</p></div>
+        <div data-lang="es"><p>Datos globales, políticas y recursos sobre igualdad de género y eliminación de la violencia contra las mujeres.</p></div>
+        <div data-lang="zh"><p>关于性别平等和消除针对妇女暴力的全球数据、政策和资源。</p></div>
+        <div data-lang="pt"><p>Dados globais, políticas e recursos sobre igualdade de gênero e eliminação da violência contra as mulheres.</p></div>
+        <a class="resource-link" href="https://www.unwomen.org" target="_blank" rel="noopener">unwomen.org →</a>
+      </div>
+
+      <div class="resource-card">
+        <span class="resource-type">USA</span>
+        <h3>thehotline.org</h3>
+        <div data-lang="en" class="active"><p>Chat, call, or text with trained advocates 24/7. Extensive online safety planning guides available.</p></div>
+        <div data-lang="es"><p>Chatea, llama o envía un mensaje de texto con defensores capacitados las 24 horas. Extensas guías de planificación de seguridad en línea disponibles.</p></div>
+        <div data-lang="zh"><p>全天候与经过培训的倡导者聊天、通话或发短信。提供广泛的在线安全计划指南。</p></div>
+        <div data-lang="pt"><p>Converse, ligue ou envie mensagem para defensores treinados 24/7. Guias extensos de planejamento de segurança online disponíveis.</p></div>
+        <a class="resource-link" href="https://www.thehotline.org" target="_blank" rel="noopener">thehotline.org →</a>
+      </div>
+
+      <div class="resource-card">
+        <span class="resource-type">Global</span>
+        <h3>Coercive Control Institute</h3>
+        <div data-lang="en" class="active"><p>Research and education on coercive control — the framework behind much modern understanding of domestic abuse.</p></div>
+        <div data-lang="es"><p>Investigación y educación sobre el control coercitivo — el marco detrás de gran parte de la comprensión moderna del abuso doméstico.</p></div>
+        <div data-lang="zh"><p>关于强制控制的研究和教育——这是现代理解家庭暴力的重要框架。</p></div>
+        <div data-lang="pt"><p>Pesquisa e educação sobre controle coercitivo — o framework por trás de grande parte do entendimento moderno sobre abuso doméstico.</p></div>
+        <a class="resource-link" href="https://coercivecontrol.info" target="_blank" rel="noopener">coercivecontrol.info →</a>
+      </div>
+
+      <div class="resource-card">
+        <span class="resource-type">
+          <div data-lang="en" class="active">For Educators</div>
+          <div data-lang="es">Para educadores</div>
+          <div data-lang="zh">面向教育工作者</div>
+          <div data-lang="pt">Para Educadores</div>
+        </span>
+        <h3>Love Is Respect</h3>
+        <div data-lang="en" class="active"><p>Resources specifically designed for young people navigating dating, relationships, and consent — free to use in education settings.</p></div>
+        <div data-lang="es"><p>Recursos diseñados específicamente para jóvenes que navegan las relaciones, el noviazgo y el consentimiento — de uso gratuito en entornos educativos.</p></div>
+        <div data-lang="zh"><p>专为应对约会、关系和同意问题的年轻人设计的资源——可在教育环境中免费使用。</p></div>
+        <div data-lang="pt"><p>Recursos projetados especificamente para jovens navegando em relacionamentos, namoro e consentimento — gratuitos para uso em ambientes educacionais.</p></div>
+        <a class="resource-link" href="https://www.loveisrespect.org" target="_blank" rel="noopener">loveisrespect.org →</a>
+      </div>
+    </div>
+
+    <div class="callout callout-reflect mt-4">
+      <p class="callout-label">A Note</p>
+      <div data-lang="en" class="active">
+        <p>Reaching out is hard. It might take several attempts to find the right support. That's okay. You don't have to have everything figured out before you call or chat — trained counselors are there to help you think, not to tell you what to do.</p>
+      </div>
+      <div data-lang="es">
+        <p>Pedir ayuda es difícil. Puede que se necesiten varios intentos para encontrar el apoyo adecuado. Eso está bien. No tienes que tener todo resuelto antes de llamar o chatear — los consejeros capacitados están ahí para ayudarte a pensar, no para decirte qué hacer.</p>
+      </div>
+      <div data-lang="zh">
+        <p>寻求帮助是困难的。可能需要几次尝试才能找到合适的支持。这没关系。你不必在打电话或聊天之前把一切都想清楚——训练有素的顾问是为了帮助你思考，而不是告诉你该怎么做。</p>
+      </div>
+      <div data-lang="pt">
+        <p>Pedir ajuda é difícil. Pode levar várias tentativas para encontrar o apoio certo. Está tudo bem. Você não precisa ter tudo resolvido antes de ligar ou conversar — conselheiros treinados estão lá para ajudá-lo a pensar, não para dizer o que fazer.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Name<span>The</span>Abuse</a>
+        <div data-lang="en" class="active"><p>A free, open educational resource on abuse, control, and gender-based violence.</p></div>
+        <div data-lang="es"><p>Un recurso educativo gratuito y abierto.</p></div>
+        <div data-lang="zh"><p>免费开放的教育资源。</p></div>
+        <div data-lang="pt"><p>Um recurso educacional gratuito e aberto.</p></div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="what-is-abuse.html">What is Abuse?</a></li>
+          <li><a href="red-flags.html">Red Flags</a></li>
+          <li><a href="structural-violence.html">Structural Violence</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <ul>
+          <li><a href="methods.html">Methods / AI</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html#team">Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><div data-lang="en" class="active">Need help now?</div><div data-lang="es">¿Necesitas ayuda?</div><div data-lang="zh">需要帮助？</div><div data-lang="pt">Precisa de ajuda?</div></h4>
+        <a href="resources.html" class="crisis-badge"><div data-lang="en" class="active">Crisis Resources</div><div data-lang="es">Recursos de crisis</div><div data-lang="zh">危机资源</div><div data-lang="pt">Recursos de Crise</div></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 NameTheAbuse. Open educational resource.</p>
+      <p><span data-lang="en" class="active">This is not a crisis service. If you are in danger, call emergency services immediately.</span><span data-lang="es">Este no es un servicio de crisis. Si estás en peligro, llama a los servicios de emergencia inmediatamente.</span><span data-lang="zh">这不是危机服务。如果您处于危险中，请立即拨打紧急服务。</span><span data-lang="pt">Este não é um serviço de crise. Se estiver em perigo, ligue para os serviços de emergência imediatamente.</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

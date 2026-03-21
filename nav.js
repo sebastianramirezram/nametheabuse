@@ -1,67 +1,102 @@
-/* NameTheAbuse — Shared Navigation JS */
-
 (function () {
   'use strict';
 
-  // ── Language Switcher ─────────────────────────────
-  const LANG_KEY = 'nta_lang';
-  const DEFAULT_LANG = 'en';
+  var LANG_KEY = 'nta_lang';
+  var DEFAULT_LANG = 'en';
 
-  function setLang(lang) {
+  function activateLanguage(lang) {
     localStorage.setItem(LANG_KEY, lang);
-    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.lang = lang;
 
-    // Show/hide all data-lang elements
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      el.classList.toggle('active', el.dataset.lang === lang);
+    document.querySelectorAll('[data-lang]').forEach(function (node) {
+      node.classList.toggle('active', node.getAttribute('data-lang') === lang);
     });
 
-    // Update active button
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.langTarget === lang);
-      btn.setAttribute('aria-pressed', btn.dataset.langTarget === lang);
-    });
-  }
-
-  function initLang() {
-    const saved = localStorage.getItem(LANG_KEY) || DEFAULT_LANG;
-    setLang(saved);
-
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => setLang(btn.dataset.langTarget));
+    document.querySelectorAll('.lang-btn').forEach(function (button) {
+      var active = button.getAttribute('data-lang-target') === lang;
+      button.setAttribute('aria-pressed', String(active));
+      button.classList.toggle('bg-ink', active);
+      button.classList.toggle('text-white', active);
+      button.classList.toggle('shadow-sm', active);
+      button.classList.toggle('text-slatewarm', !active);
     });
   }
 
-  // ── Mobile Nav Toggle ─────────────────────────────
-  function initNav() {
-    const toggle = document.querySelector('.nav-toggle');
-    const links  = document.querySelector('.nav-links');
-    if (!toggle || !links) return;
+  function initLanguage() {
+    var saved = localStorage.getItem(LANG_KEY) || DEFAULT_LANG;
+    activateLanguage(saved);
 
-    toggle.addEventListener('click', () => {
-      const open = links.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-
-    // Close on link click
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => links.classList.remove('open'));
+    document.querySelectorAll('.lang-btn').forEach(function (button) {
+      button.addEventListener('click', function () {
+        activateLanguage(button.getAttribute('data-lang-target'));
+      });
     });
   }
 
-  // ── Active Nav Link ───────────────────────────────
-  function highlightNav() {
-    const path = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      const href = a.getAttribute('href');
-      a.classList.toggle('active', href === path);
+  function initMobileMenu() {
+    var toggle = document.querySelector('[data-mobile-toggle]');
+    var menu = document.getElementById('mobile-menu');
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', function () {
+      var isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menu.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 
-  // ── Init ──────────────────────────────────────────
-  document.addEventListener('DOMContentLoaded', () => {
-    initLang();
-    initNav();
-    highlightNav();
+  function setPanelState(trigger, open) {
+    var panelId = trigger.getAttribute('aria-controls');
+    var panel = panelId ? document.getElementById(panelId) : null;
+    var icon = trigger.querySelector('[data-accordion-icon]');
+    if (!panel) return;
+
+    trigger.setAttribute('aria-expanded', String(open));
+    panel.hidden = false;
+
+    if (open) {
+      panel.classList.add('is-open');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+      if (icon) icon.style.transform = 'rotate(180deg)';
+    } else {
+      panel.classList.remove('is-open');
+      panel.style.maxHeight = '0px';
+      if (icon) icon.style.transform = 'rotate(0deg)';
+      window.setTimeout(function () {
+        if (trigger.getAttribute('aria-expanded') === 'false') {
+          panel.hidden = true;
+        }
+      }, 280);
+    }
+  }
+
+  function initAccordions() {
+    document.querySelectorAll('[data-accordion-group]').forEach(function (group) {
+      group.querySelectorAll('[data-accordion-trigger]').forEach(function (trigger) {
+        setPanelState(trigger, false);
+        trigger.addEventListener('click', function () {
+          var willOpen = trigger.getAttribute('aria-expanded') !== 'true';
+
+          group.querySelectorAll('[data-accordion-trigger]').forEach(function (other) {
+            if (other !== trigger) setPanelState(other, false);
+          });
+
+          setPanelState(trigger, willOpen);
+        });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initLanguage();
+    initMobileMenu();
+    initAccordions();
   });
 })();

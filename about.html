@@ -1,559 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — NameTheAbuse</title>
-  <meta name="description" content="Learn about the NameTheAbuse project — who made it, why, and how AI is used to make research on abuse and control accessible." />
-  <link rel="stylesheet" href="style.css" />
+  <title>About | NameTheAbuse</title>
+  <meta name="description" content="Learn about the mission, tone, and purpose behind NameTheAbuse." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { sand: '#f6f3ee', cloud: '#fbfaf8', mist: '#eef1f3', ink: '#24323d', slatewarm: '#54616c', blue: '#7f9db6', teal: '#7ca6a5', amber: '#c3a36a', rose: '#b88d95', violet: '#9389b5' }, fontFamily: { sans: ['Source Sans 3', 'ui-sans-serif', 'system-ui', 'sans-serif'], display: ['Cormorant Garamond', 'ui-serif', 'Georgia', 'serif'] }, boxShadow: { soft: '0 24px 60px rgba(36, 50, 61, 0.08)', card: '0 14px 36px rgba(36, 50, 61, 0.07)' } } } };
+  </script>
+  <style>[data-lang]{display:none}[data-lang].active{display:block}</style>
 </head>
-<body>
-
-<!-- ── Navigation ──────────────────────────────────── -->
-<nav class="navbar" aria-label="Main navigation">
-  <div class="navbar-inner">
-    <a href="index.html" class="nav-logo">Name<span>The</span>Abuse</a>
-
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <ul class="nav-links" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="what-is-abuse.html">What is Abuse?</a></li>
-      <li><a href="red-flags.html">Red Flags</a></li>
-      <li><a href="structural-violence.html">Structural Violence</a></li>
-      <li><a href="methods.html">Methods</a></li>
-      <li><a href="resources.html">Resources</a></li>
-    </ul>
-
-    <div class="nav-right">
-      <div class="lang-switcher" role="group" aria-label="Language">
-        <button class="lang-btn active" data-lang-target="en"  aria-pressed="true">EN</button>
-        <button class="lang-btn"       data-lang-target="es"  aria-pressed="false">ES</button>
-        <button class="lang-btn"       data-lang-target="zh"  aria-pressed="false">中文</button>
-        <button class="lang-btn"       data-lang-target="pt"  aria-pressed="false">PT</button>
+<body class="min-h-screen bg-sand font-sans text-ink antialiased">
+  <div class="fixed inset-x-0 top-0 -z-10 h-[32rem] bg-[radial-gradient(circle_at_top,rgba(127,157,182,0.18),transparent_50%),radial-gradient(circle_at_85%_20%,rgba(147,137,181,0.16),transparent_32%),radial-gradient(circle_at_15%_15%,rgba(124,166,165,0.14),transparent_28%)]"></div>
+  <header class="sticky top-0 z-50 border-b border-white/70 bg-sand/90 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8" aria-label="Main navigation">
+      <a href="index.html" class="shrink-0 text-[1.15rem] font-semibold tracking-[0.02em] text-ink"><span class="font-display text-3xl leading-none">Name</span><span class="text-blue">The</span><span class="font-display text-3xl leading-none">Abuse</span></a>
+      <div class="hidden flex-1 items-center justify-center gap-1 xl:flex">
+        <a href="index.html" class="rounded-full px-4 py-2 text-sm font-semibold text-slatewarm transition hover:bg-white/80 hover:text-ink">Home</a>
+        <a href="about.html" class="rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-ink shadow-sm ring-1 ring-slate-200/80 transition">About</a>
+        <a href="what-is-abuse.html" class="rounded-full px-4 py-2 text-sm font-semibold text-slatewarm transition hover:bg-white/80 hover:text-ink">What Is Abuse</a>
+        <a href="red-flags.html" class="rounded-full px-4 py-2 text-sm font-semibold text-slatewarm transition hover:bg-white/80 hover:text-ink">Red Flags</a>
+        <a href="structural-violence.html" class="rounded-full px-4 py-2 text-sm font-semibold text-slatewarm transition hover:bg-white/80 hover:text-ink">Structural Violence</a>
+        <a href="methods.html" class="rounded-full px-4 py-2 text-sm font-semibold text-slatewarm transition hover:bg-white/80 hover:text-ink">Methods</a>
+        <a href="resources.html" class="rounded-full px-4 py-2 text-sm font-semibold text-slatewarm transition hover:bg-white/80 hover:text-ink">Resources</a>
+        <a href="campaign.html" class="rounded-full px-4 py-2 text-sm font-semibold text-slatewarm transition hover:bg-white/80 hover:text-ink">Campaign</a>
       </div>
-    </div>
-  </div>
-</nav>
+      <div class="hidden items-center gap-2 md:flex"><div class="inline-flex rounded-full border border-slate-200/80 bg-white/80 p-1 shadow-sm" role="group" aria-label="Language switcher"><button type="button" class="lang-btn rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.16em] text-slatewarm transition" data-lang-target="en" aria-pressed="true">EN</button><button type="button" class="lang-btn rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.16em] text-slatewarm transition" data-lang-target="es" aria-pressed="false">ES</button><button type="button" class="lang-btn rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.16em] text-slatewarm transition" data-lang-target="zh" aria-pressed="false">中文</button><button type="button" class="lang-btn rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.16em] text-slatewarm transition" data-lang-target="pt" aria-pressed="false">PT</button></div></div>
+      <button type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200/80 bg-white/80 text-ink shadow-sm transition hover:bg-white xl:hidden" data-mobile-toggle aria-expanded="false" aria-controls="mobile-menu"><span class="sr-only">Toggle menu</span><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-slate-200/80 bg-sand/95 px-4 pb-5 pt-3 shadow-soft xl:hidden"><div class="mx-auto flex max-w-7xl flex-col gap-2"><div class="mb-2 flex flex-wrap items-center gap-2 md:hidden"><div class="inline-flex rounded-full border border-slate-200/80 bg-white/90 p-1 shadow-sm" role="group" aria-label="Language switcher"><button type="button" class="lang-btn rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.16em] text-slatewarm transition" data-lang-target="en" aria-pressed="true">EN</button><button type="button" class="lang-btn rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.16em] text-slatewarm transition" data-lang-target="es" aria-pressed="false">ES</button><button type="button" class="lang-btn rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.16em] text-slatewarm transition" data-lang-target="zh" aria-pressed="false">中文</button><button type="button" class="lang-btn rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.16em] text-slatewarm transition" data-lang-target="pt" aria-pressed="false">PT</button></div></div><a href="index.html" class="rounded-2xl px-4 py-3 text-sm font-semibold text-slatewarm transition hover:bg-slate-100">Home</a><a href="about.html" class="rounded-2xl bg-slate-100 px-4 py-3 text-sm font-semibold text-ink transition">About</a><a href="what-is-abuse.html" class="rounded-2xl px-4 py-3 text-sm font-semibold text-slatewarm transition hover:bg-slate-100">What Is Abuse</a><a href="red-flags.html" class="rounded-2xl px-4 py-3 text-sm font-semibold text-slatewarm transition hover:bg-slate-100">Red Flags</a><a href="structural-violence.html" class="rounded-2xl px-4 py-3 text-sm font-semibold text-slatewarm transition hover:bg-slate-100">Structural Violence</a><a href="methods.html" class="rounded-2xl px-4 py-3 text-sm font-semibold text-slatewarm transition hover:bg-slate-100">Methods</a><a href="resources.html" class="rounded-2xl px-4 py-3 text-sm font-semibold text-slatewarm transition hover:bg-slate-100">Resources</a><a href="campaign.html" class="rounded-2xl px-4 py-3 text-sm font-semibold text-slatewarm transition hover:bg-slate-100">Campaign</a></div></div>
+  </header>
 
-<!-- ── Page Header ──────────────────────────────────── -->
-<header class="page-header">
-  <div class="container">
-    <div data-lang="en" class="active">
-      <span class="eyebrow">About This Project</span>
-      <h1>Why We Built NameTheAbuse</h1>
-      <p>A public education effort designed with care — for students, educators, and communities navigating difficult realities.</p>
-    </div>
-    <div data-lang="es">
-      <span class="eyebrow">Sobre este proyecto</span>
-      <h1>Por qué creamos NameTheAbuse</h1>
-      <p>Un esfuerzo de educación pública diseñado con cuidado — para estudiantes, educadores y comunidades que enfrentan realidades difíciles.</p>
-    </div>
-    <div data-lang="zh">
-      <span class="eyebrow">关于本项目</span>
-      <h1>我们为什么建立 NameTheAbuse</h1>
-      <p>一项精心设计的公众教育工作——为学生、教育工作者以及面对困难现实的社区。</p>
-    </div>
-    <div data-lang="pt">
-      <span class="eyebrow">Sobre Este Projeto</span>
-      <h1>Por que Criamos o NameTheAbuse</h1>
-      <p>Um esforço de educação pública desenvolvido com cuidado — para estudantes, educadores e comunidades navegando por realidades difíceis.</p>
-    </div>
-  </div>
-</header>
-
-<!-- ── Origin ───────────────────────────────────────── -->
-<section class="section">
-  <div class="container">
-    <div class="grid-2" style="gap: 3.5rem; align-items: start;">
-
-      <div class="prose">
-        <div data-lang="en" class="active">
-          <span class="eyebrow">The Origin</span>
-          <h2>Where this started</h2>
-          <p>NameTheAbuse began as a question: <em>why is it so hard to recognize abuse when you're inside it?</em></p>
-          <p>Research shows that most people who experience coercive control or emotional abuse don't identify what's happening as abuse — at least not at first. The behaviors feel too familiar, too small, too easily explained away.</p>
-          <p>Meanwhile, academic literature on gender-based violence, coercive control, and structural inequality often stays locked behind institutional paywalls — inaccessible to the students and communities who need it most.</p>
-          <p>This project exists to close that gap.</p>
-        </div>
-        <div data-lang="es">
-          <span class="eyebrow">El origen</span>
-          <h2>Dónde comenzó todo</h2>
-          <p>NameTheAbuse surgió de una pregunta: <em>¿por qué es tan difícil reconocer el abuso cuando estás dentro de él?</em></p>
-          <p>La investigación muestra que la mayoría de las personas que experimentan control coercitivo o abuso emocional no identifican lo que les sucede como abuso, al menos no al principio. Los comportamientos se sienten demasiado familiares, demasiado pequeños, demasiado fáciles de justificar.</p>
-          <p>Mientras tanto, la literatura académica sobre violencia de género, control coercitivo y desigualdad estructural a menudo permanece encerrada detrás de muros de pago institucionales, inaccesible para los estudiantes y comunidades que más la necesitan.</p>
-          <p>Este proyecto existe para cerrar esa brecha.</p>
-        </div>
-        <div data-lang="zh">
-          <span class="eyebrow">起源</span>
-          <h2>这一切从哪里开始</h2>
-          <p>NameTheAbuse 始于一个问题：<em>为什么身处其中时很难识别虐待？</em></p>
-          <p>研究表明，大多数经历强制控制或情感虐待的人——至少在最初——并不认为发生的事情是虐待。这些行为感觉太熟悉、太微小、太容易被解释掉了。</p>
-          <p>与此同时，关于性别暴力、强制控制和结构性不平等的学术文献通常被锁在机构付费墙后面——最需要它的学生和社区无法获取。</p>
-          <p>本项目的存在就是为了弥合这一差距。</p>
-        </div>
-        <div data-lang="pt">
-          <span class="eyebrow">A Origem</span>
-          <h2>Onde tudo começou</h2>
-          <p>O NameTheAbuse surgiu de uma pergunta: <em>por que é tão difícil reconhecer o abuso quando você está dentro dele?</em></p>
-          <p>Pesquisas mostram que a maioria das pessoas que experimenta controle coercitivo ou abuso emocional não identifica o que está acontecendo como abuso — pelo menos não a princípio. Os comportamentos parecem familiares demais, pequenos demais, fáceis demais de justificar.</p>
-          <p>Enquanto isso, a literatura acadêmica sobre violência de gênero, controle coercitivo e desigualdade estrutural muitas vezes fica trancada por trás de muros pagos institucionais — inacessível para os estudantes e comunidades que mais precisam.</p>
-          <p>Este projeto existe para fechar essa lacuna.</p>
+  <main class="pb-20">
+    <section class="relative overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 pb-12 pt-14 sm:px-6 lg:px-8 lg:pb-16 lg:pt-20">
+        <div class="max-w-4xl">
+          <div data-lang="en" class="active"><p class="text-[0.72rem] font-semibold uppercase tracking-[0.26em] text-slatewarm">About This Project</p><h1 class="mt-4 font-display text-5xl leading-none text-ink sm:text-6xl lg:text-7xl">A public education project built with care, clarity, and restraint.</h1><p class="mt-6 max-w-3xl text-lg leading-8 text-slatewarm sm:text-xl">NameTheAbuse brings together accessible language, reflective design, and research-aware framing to help people understand abuse without sensationalizing it.</p></div>
+          <div data-lang="es"><p class="text-[0.72rem] font-semibold uppercase tracking-[0.26em] text-slatewarm">Sobre este proyecto</p><h1 class="mt-4 font-display text-5xl leading-none text-ink sm:text-6xl lg:text-7xl">Un proyecto de educación pública hecho con cuidado, claridad y sobriedad.</h1><p class="mt-6 max-w-3xl text-lg leading-8 text-slatewarm sm:text-xl">NameTheAbuse reúne lenguaje accesible, diseño reflexivo y una mirada informada por la investigación.</p></div>
+          <div data-lang="zh"><p class="text-[0.72rem] font-semibold uppercase tracking-[0.26em] text-slatewarm">关于这个项目</p><h1 class="mt-4 font-display text-5xl leading-none text-ink sm:text-6xl lg:text-7xl">一个以关怀、清晰和克制为核心的公共教育项目。</h1><p class="mt-6 max-w-3xl text-lg leading-8 text-slatewarm sm:text-xl">NameTheAbuse 试图用更可读的语言和更平静的方式帮助人们理解虐待。</p></div>
+          <div data-lang="pt"><p class="text-[0.72rem] font-semibold uppercase tracking-[0.26em] text-slatewarm">Sobre este projeto</p><h1 class="mt-4 font-display text-5xl leading-none text-ink sm:text-6xl lg:text-7xl">Um projeto de educação pública feito com cuidado, clareza e contenção.</h1><p class="mt-6 max-w-3xl text-lg leading-8 text-slatewarm sm:text-xl">NameTheAbuse reúne linguagem acessível, design reflexivo e uma abordagem informada por pesquisa.</p></div>
         </div>
       </div>
+    </section>
 
-      <div>
-        <div class="callout callout-why">
-          <p class="callout-label">Why This Matters</p>
-          <div data-lang="en" class="active">
-            <p><strong>Language is the first step.</strong> When you can name what's happening, you gain the ability to see it clearly — and to make choices about it.</p>
-            <p>This project gives people vocabulary. Not to label others, but to understand their own experiences.</p>
-          </div>
-          <div data-lang="es">
-            <p><strong>El lenguaje es el primer paso.</strong> Cuando puedes nombrar lo que está sucediendo, adquieres la capacidad de verlo con claridad y de tomar decisiones al respecto.</p>
-            <p>Este proyecto le da a la gente vocabulario. No para etiquetar a otros, sino para entender sus propias experiencias.</p>
-          </div>
-          <div data-lang="zh">
-            <p><strong>语言是第一步。</strong> 当你能够命名正在发生的事情时，你就获得了清晰地看待它——并对此作出选择的能力。</p>
-            <p>本项目为人们提供词汇。不是为了给他人贴标签，而是为了理解自己的经历。</p>
-          </div>
-          <div data-lang="pt">
-            <p><strong>A linguagem é o primeiro passo.</strong> Quando você pode nomear o que está acontecendo, você ganha a capacidade de vê-lo claramente — e de fazer escolhas sobre isso.</p>
-            <p>Este projeto dá às pessoas vocabulário. Não para rotular os outros, mas para entender suas próprias experiências.</p>
-          </div>
-        </div>
+    <section class="mx-auto grid max-w-7xl gap-10 px-4 py-6 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+      <article class="max-w-3xl space-y-6 text-lg leading-8 text-slatewarm">
+        <p>NameTheAbuse began from a simple but difficult question: why is harmful behavior so often recognized only after it has already become deeply familiar? Many patterns of abuse do not arrive with obvious language. They can look like care, romance, stress, loyalty, or something a person keeps trying to explain away.</p>
+        <p>This project exists to slow that process down. It translates conversations about abuse, coercive control, and structural violence into language that is easier to approach while preserving seriousness and nuance. The goal is not to diagnose people from a website. The goal is to make recognition more possible.</p>
+        <p>The tone matters as much as the information. Readers may be coming here while feeling uncertain, ashamed, defensive, or overwhelmed. The design and writing are intentionally calm so that the site can support reflection rather than escalation.</p>
+      </article>
+      <aside class="space-y-4">
+        <div class="rounded-[1.75rem] border border-slate-200/80 bg-white/80 p-6 shadow-card"><p class="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-slatewarm">Mission</p><p class="mt-3 text-base leading-7 text-slatewarm">Create a trustworthy educational resource that helps people identify harmful patterns, understand their wider context, and find support without feeling rushed or judged.</p></div>
+        <div class="rounded-[1.75rem] border border-slate-200/80 bg-white/80 p-6 shadow-card"><p class="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-teal">Who It Is For</p><p class="mt-3 text-base leading-7 text-slatewarm">Students, educators, researchers, community members, and anyone trying to understand the language around abuse, control, and gender-based harm more clearly.</p></div>
+        <div class="rounded-[1.75rem] border border-slate-200/80 bg-white/80 p-6 shadow-card"><p class="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-violet">Approach</p><p class="mt-3 text-base leading-7 text-slatewarm">Trauma-aware tone, careful hierarchy, readable sections, and a clear distinction between education, reflection, and direct support resources.</p></div>
+      </aside>
+    </section>
 
-        <div class="callout callout-reflect mt-3">
-          <p class="callout-label">Pause &amp; Reflect</p>
-          <div data-lang="en" class="active">
-            <p>Think about a time you described something uncomfortable in a relationship as "just how things are." What would it mean to have a word for it?</p>
-          </div>
-          <div data-lang="es">
-            <p>Piensa en una vez que describiste algo incómodo en una relación como "así son las cosas." ¿Qué significaría tener una palabra para ello?</p>
-          </div>
-          <div data-lang="zh">
-            <p>想想你曾经把关系中某些不舒适的事情描述为"事情本来就是这样"的时刻。如果有一个词来描述它，会意味着什么？</p>
-          </div>
-          <div data-lang="pt">
-            <p>Pense em uma vez que descreveu algo desconfortável em um relacionamento como "é assim mesmo." O que significaria ter uma palavra para isso?</p>
-          </div>
+    <section class="mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
+      <div class="grid gap-5 md:grid-cols-3">
+        <div class="rounded-[1.75rem] border border-slate-200/80 bg-white/80 p-6 shadow-card"><p class="text-lg font-semibold text-ink">Research-aware</p><p class="mt-2 text-sm leading-6 text-slatewarm">The site is shaped by academic conversations on coercive control, abuse, inequality, and gender-based violence.</p></div>
+        <div class="rounded-[1.75rem] border border-slate-200/80 bg-white/80 p-6 shadow-card"><p class="text-lg font-semibold text-ink">Editorial by design</p><p class="mt-2 text-sm leading-6 text-slatewarm">Reading widths, section pacing, and callout structure are all designed to support concentration on difficult topics.</p></div>
+        <div class="rounded-[1.75rem] border border-slate-200/80 bg-white/80 p-6 shadow-card"><p class="text-lg font-semibold text-ink">Open and evolving</p><p class="mt-2 text-sm leading-6 text-slatewarm">This is an ongoing project, not a finished archive. Pages can expand as the work, questions, and sources deepen.</p></div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <div class="rounded-[2.25rem] border border-slate-200/80 bg-[#f2eee8] p-6 shadow-soft sm:p-8 lg:p-10">
+        <div class="max-w-3xl">
+          <p class="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-slatewarm">About Me</p>
+          <p class="mt-5 text-base leading-8 text-slatewarm">This project was created by Sebastian Ramírez, a PhD student at Northeastern University interested in gender, education, and climate change. NameTheAbuse exists as a quiet public-facing space for naming harmful patterns, making research more usable, and encouraging reflection without sensationalism.</p>
+          <p class="mt-4 text-base leading-8 text-slatewarm"><a href="https://twitter.com/SebastianRamRa1" target="_blank" rel="noreferrer" class="font-semibold text-blue underline decoration-blue/40 underline-offset-4">@SebastianRamRa1</a></p>
         </div>
       </div>
+    </section>
+  </main>
 
+  <footer class="border-t border-slate-200/80 bg-[#f1eee8]">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid gap-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr]"><div class="space-y-5"><div><p class="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-slatewarm">NameTheAbuse</p><h2 class="mt-3 max-w-md font-display text-4xl leading-tight text-ink">A calmer, clearer space for understanding harm.</h2><p class="mt-3 max-w-xl text-base leading-7 text-slatewarm">This site is an educational resource. It is not a crisis service, diagnosis tool, or substitute for professional support.</p></div><div class="rounded-[2rem] border border-slate-200/80 bg-white/75 p-6 shadow-card"><p class="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-slatewarm">About Me</p><p class="mt-3 text-sm leading-7 text-slatewarm">This project was created by Sebastian Ramírez, a PhD student at Northeastern University interested in gender, education, and climate change. <a class="font-semibold text-blue underline decoration-blue/40 underline-offset-4" href="https://twitter.com/SebastianRamRa1" target="_blank" rel="noreferrer">@SebastianRamRa1</a></p></div></div><div><p class="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-slatewarm">Explore</p><div class="mt-4 flex flex-col gap-3 text-sm text-slatewarm"><a class="transition hover:text-ink" href="about.html">About</a><a class="transition hover:text-ink" href="what-is-abuse.html">What Is Abuse</a><a class="transition hover:text-ink" href="red-flags.html">Red Flags</a><a class="transition hover:text-ink" href="structural-violence.html">Structural Violence</a><a class="transition hover:text-ink" href="methods.html">Methods</a><a class="transition hover:text-ink" href="campaign.html">Campaign</a></div></div><div><p class="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-slatewarm">Support</p><div class="mt-4 rounded-[1.75rem] border border-slate-200/80 bg-white/80 p-5 shadow-card"><p class="text-sm leading-7 text-slatewarm">If you need immediate support, visit the resources page for crisis lines, trusted organizations, and digital safety guidance.</p><a href="resources.html" class="mt-4 inline-flex items-center rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-700">Open Resources</a></div></div></div>
+      <div class="mt-10 flex flex-col gap-2 border-t border-slate-200/80 pt-6 text-sm text-slatewarm sm:flex-row sm:items-center sm:justify-between"><p>© 2026 NameTheAbuse</p><p>Designed as a reflective public education platform.</p></div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ── Our Approach ──────────────────────────────────── -->
-<section class="section section-alt">
-  <div class="container">
-
-    <div data-lang="en" class="active">
-      <div class="section-header">
-        <span class="eyebrow">Our Approach</span>
-        <h2>How we think about this work</h2>
-        <p>Education about abuse can go wrong. We made specific choices to avoid common pitfalls.</p>
-      </div>
-    </div>
-    <div data-lang="es">
-      <div class="section-header">
-        <span class="eyebrow">Nuestro enfoque</span>
-        <h2>Cómo pensamos sobre este trabajo</h2>
-        <p>La educación sobre el abuso puede salir mal. Tomamos decisiones específicas para evitar errores comunes.</p>
-      </div>
-    </div>
-    <div data-lang="zh">
-      <div class="section-header">
-        <span class="eyebrow">我们的方法</span>
-        <h2>我们如何思考这项工作</h2>
-        <p>关于虐待的教育可能会出错。我们做出了具体选择来避免常见的陷阱。</p>
-      </div>
-    </div>
-    <div data-lang="pt">
-      <div class="section-header">
-        <span class="eyebrow">Nossa Abordagem</span>
-        <h2>Como pensamos sobre este trabalho</h2>
-        <p>A educação sobre abuso pode dar errado. Fizemos escolhas específicas para evitar armadilhas comuns.</p>
-      </div>
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon card-icon-blue">⚖️</div>
-        <div data-lang="en" class="active">
-          <h3>Gender-neutral framing</h3>
-          <p>Abuse occurs across all genders, relationship types, and social contexts. Our language reflects that — without erasing the gendered dimensions of structural violence.</p>
-        </div>
-        <div data-lang="es">
-          <h3>Enfoque de género neutro</h3>
-          <p>El abuso ocurre en todos los géneros, tipos de relaciones y contextos sociales. Nuestro lenguaje lo refleja — sin borrar las dimensiones de género de la violencia estructural.</p>
-        </div>
-        <div data-lang="zh">
-          <h3>性别中立的框架</h3>
-          <p>虐待发生在所有性别、关系类型和社会背景中。我们的语言反映了这一点——同时不抹去结构性暴力的性别维度。</p>
-        </div>
-        <div data-lang="pt">
-          <h3>Enquadramento neutro de gênero</h3>
-          <p>O abuso ocorre em todos os gêneros, tipos de relacionamentos e contextos sociais. Nossa linguagem reflete isso — sem apagar as dimensões de gênero da violência estrutural.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon card-icon-purple">🧠</div>
-        <div data-lang="en" class="active">
-          <h3>Trauma-informed tone</h3>
-          <p>We write with awareness that readers may be in the middle of what we're describing. Content is clear and honest without being retraumatizing or sensationalist.</p>
-        </div>
-        <div data-lang="es">
-          <h3>Tono informado por el trauma</h3>
-          <p>Escribimos con conciencia de que los lectores pueden estar viviendo lo que describimos. El contenido es claro y honesto sin retraumatizar ni sensacionalizar.</p>
-        </div>
-        <div data-lang="zh">
-          <h3>创伤知情的语气</h3>
-          <p>我们写作时意识到读者可能正处于我们所描述的情境中。内容清晰诚实，但不会造成二次创伤或耸人听闻。</p>
-        </div>
-        <div data-lang="pt">
-          <h3>Tom informado por trauma</h3>
-          <p>Escrevemos com consciência de que os leitores podem estar no meio do que estamos descrevendo. O conteúdo é claro e honesto sem retraumatizar ou sensacionalizar.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon card-icon-teal">📚</div>
-        <div data-lang="en" class="active">
-          <h3>Research-grounded</h3>
-          <p>Content is based on established research in psychology, sociology, and gender studies — not opinion. AI is used to make this research accessible, not to replace it.</p>
-        </div>
-        <div data-lang="es">
-          <h3>Basado en investigación</h3>
-          <p>El contenido se basa en investigaciones establecidas en psicología, sociología y estudios de género — no en opiniones. La IA se usa para hacer esta investigación accesible, no para reemplazarla.</p>
-        </div>
-        <div data-lang="zh">
-          <h3>以研究为基础</h3>
-          <p>内容基于心理学、社会学和性别研究领域的既有研究——而非观点。AI用于使这些研究更易获取，而非取代它们。</p>
-        </div>
-        <div data-lang="pt">
-          <h3>Fundamentado em Pesquisa</h3>
-          <p>O conteúdo é baseado em pesquisas estabelecidas em psicologia, sociologia e estudos de gênero — não em opinião. A IA é usada para tornar essa pesquisa acessível, não para substituí-la.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── What This Is / Isn't ──────────────────────────── -->
-<section class="section">
-  <div class="container" style="max-width: 800px;">
-
-    <div data-lang="en" class="active">
-      <span class="eyebrow">Scope &amp; Limits</span>
-      <h2>What this project is — and isn't</h2>
-    </div>
-    <div data-lang="es">
-      <span class="eyebrow">Alcance y límites</span>
-      <h2>Qué es este proyecto — y qué no es</h2>
-    </div>
-    <div data-lang="zh">
-      <span class="eyebrow">范围与局限</span>
-      <h2>本项目是什么——以及不是什么</h2>
-    </div>
-    <div data-lang="pt">
-      <span class="eyebrow">Escopo e Limites</span>
-      <h2>O que este projeto é — e o que não é</h2>
-    </div>
-
-    <div class="grid-2 mt-3">
-      <div class="card" style="border-color: var(--accent);">
-        <div data-lang="en" class="active">
-          <h3 style="color:#3d8870">✓ This project is</h3>
-          <ul>
-            <li>A free educational resource</li>
-            <li>A way to build vocabulary around difficult experiences</li>
-            <li>Designed for students, educators, and the curious</li>
-            <li>Multilingual and open access</li>
-            <li>Informed by research and community needs</li>
-          </ul>
-        </div>
-        <div data-lang="es">
-          <h3 style="color:#3d8870">✓ Este proyecto es</h3>
-          <ul>
-            <li>Un recurso educativo gratuito</li>
-            <li>Una forma de construir vocabulario en torno a experiencias difíciles</li>
-            <li>Diseñado para estudiantes, educadores y personas curiosas</li>
-            <li>Multilingüe y de acceso abierto</li>
-            <li>Informado por la investigación y las necesidades de la comunidad</li>
-          </ul>
-        </div>
-        <div data-lang="zh">
-          <h3 style="color:#3d8870">✓ 本项目是</h3>
-          <ul>
-            <li>免费的教育资源</li>
-            <li>围绕困难经历建立词汇的方式</li>
-            <li>为学生、教育工作者和好奇者设计</li>
-            <li>多语言和开放获取</li>
-            <li>以研究和社区需求为基础</li>
-          </ul>
-        </div>
-        <div data-lang="pt">
-          <h3 style="color:#3d8870">✓ Este projeto é</h3>
-          <ul>
-            <li>Um recurso educacional gratuito</li>
-            <li>Uma forma de construir vocabulário em torno de experiências difíceis</li>
-            <li>Projetado para estudantes, educadores e curiosos</li>
-            <li>Multilíngue e de acesso aberto</li>
-            <li>Informado por pesquisas e necessidades da comunidade</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card" style="border-color: var(--secondary);">
-        <div data-lang="en" class="active">
-          <h3 style="color:#7060a0">✗ This project is not</h3>
-          <ul>
-            <li>A crisis service or helpline</li>
-            <li>A substitute for professional support</li>
-            <li>Legal advice</li>
-            <li>A diagnostic tool</li>
-            <li>A way to judge or label individuals</li>
-          </ul>
-          <p class="mt-2" style="font-size:0.9rem; color:var(--text-muted);">If you are in immediate danger, please contact emergency services in your country.</p>
-        </div>
-        <div data-lang="es">
-          <h3 style="color:#7060a0">✗ Este proyecto no es</h3>
-          <ul>
-            <li>Un servicio de crisis o línea de ayuda</li>
-            <li>Un sustituto del apoyo profesional</li>
-            <li>Asesoramiento legal</li>
-            <li>Una herramienta de diagnóstico</li>
-            <li>Una forma de juzgar o etiquetar a individuos</li>
-          </ul>
-          <p class="mt-2" style="font-size:0.9rem; color:var(--text-muted);">Si estás en peligro inmediato, comunícate con los servicios de emergencia de tu país.</p>
-        </div>
-        <div data-lang="zh">
-          <h3 style="color:#7060a0">✗ 本项目不是</h3>
-          <ul>
-            <li>危机服务或热线</li>
-            <li>专业支持的替代品</li>
-            <li>法律建议</li>
-            <li>诊断工具</li>
-            <li>评判或标记个人的方式</li>
-          </ul>
-          <p class="mt-2" style="font-size:0.9rem; color:var(--text-muted);">如果您处于立即危险中，请联系您所在国家的紧急服务。</p>
-        </div>
-        <div data-lang="pt">
-          <h3 style="color:#7060a0">✗ Este projeto não é</h3>
-          <ul>
-            <li>Um serviço de crise ou linha de apoio</li>
-            <li>Um substituto para apoio profissional</li>
-            <li>Conselho jurídico</li>
-            <li>Uma ferramenta de diagnóstico</li>
-            <li>Uma forma de julgar ou rotular indivíduos</li>
-          </ul>
-          <p class="mt-2" style="font-size:0.9rem; color:var(--text-muted);">Se você estiver em perigo imediato, contate os serviços de emergência do seu país.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── AI in This Project ────────────────────────────── -->
-<section class="section section-alt">
-  <div class="container" style="max-width: 800px;">
-
-    <div data-lang="en" class="active">
-      <span class="eyebrow">Technology</span>
-      <h2>How AI is used in this project</h2>
-      <p>Artificial intelligence tools — including large language models — were used in the research, translation, and writing process of this project. We believe in being transparent about that.</p>
-
-      <div class="callout callout-normal">
-        <p class="callout-label">Our AI Principles</p>
-        <ul>
-          <li><strong>AI as translator, not authority</strong> — AI helped us convert academic research into plain language. All core concepts are grounded in established scholarship.</li>
-          <li><strong>Human review</strong> — All content was reviewed by project members before publication.</li>
-          <li><strong>Transparency</strong> — We document our AI workflow in the <a href="methods.html">Methods</a> section.</li>
-          <li><strong>Not generative fiction</strong> — We do not use AI to invent stories, statistics, or case studies.</li>
-        </ul>
-      </div>
-
-      <p>AI is a tool. The responsibility for how it's used — and the values behind it — rests with the humans who made this project.</p>
-    </div>
-
-    <div data-lang="es">
-      <span class="eyebrow">Tecnología</span>
-      <h2>Cómo se usa la IA en este proyecto</h2>
-      <p>Se usaron herramientas de inteligencia artificial — incluyendo grandes modelos de lenguaje — en el proceso de investigación, traducción y redacción de este proyecto. Creemos en ser transparentes al respecto.</p>
-
-      <div class="callout callout-normal">
-        <p class="callout-label">Nuestros principios sobre IA</p>
-        <ul>
-          <li><strong>La IA como traductora, no como autoridad</strong> — La IA nos ayudó a convertir la investigación académica en lenguaje simple. Todos los conceptos clave están basados en estudios consolidados.</li>
-          <li><strong>Revisión humana</strong> — Todo el contenido fue revisado por miembros del proyecto antes de su publicación.</li>
-          <li><strong>Transparencia</strong> — Documentamos nuestro flujo de trabajo con IA en la sección de <a href="methods.html">Métodos</a>.</li>
-          <li><strong>No es ficción generativa</strong> — No usamos la IA para inventar historias, estadísticas o casos de estudio.</li>
-        </ul>
-      </div>
-
-      <p>La IA es una herramienta. La responsabilidad de cómo se usa — y los valores detrás de ello — recae en las personas que hicieron este proyecto.</p>
-    </div>
-
-    <div data-lang="zh">
-      <span class="eyebrow">技术</span>
-      <h2>本项目如何使用 AI</h2>
-      <p>人工智能工具——包括大型语言模型——被用于本项目的研究、翻译和写作过程。我们相信对此保持透明。</p>
-
-      <div class="callout callout-normal">
-        <p class="callout-label">我们的 AI 原则</p>
-        <ul>
-          <li><strong>AI 作为翻译者，而非权威</strong> — AI 帮助我们将学术研究转化为通俗语言。所有核心概念都以既有学术成果为基础。</li>
-          <li><strong>人工审核</strong> — 所有内容在发布前均由项目成员审核。</li>
-          <li><strong>透明度</strong> — 我们在<a href="methods.html">方法</a>部分记录了我们的 AI 工作流程。</li>
-          <li><strong>非生成性虚构</strong> — 我们不使用 AI 来虚构故事、统计数据或案例研究。</li>
-        </ul>
-      </div>
-
-      <p>AI 是一种工具。如何使用它——以及背后的价值观——由制作本项目的人类负责。</p>
-    </div>
-
-    <div data-lang="pt">
-      <span class="eyebrow">Tecnologia</span>
-      <h2>Como a IA é usada neste projeto</h2>
-      <p>Ferramentas de inteligência artificial — incluindo grandes modelos de linguagem — foram usadas no processo de pesquisa, tradução e escrita deste projeto. Acreditamos em ser transparentes sobre isso.</p>
-
-      <div class="callout callout-normal">
-        <p class="callout-label">Nossos Princípios de IA</p>
-        <ul>
-          <li><strong>IA como tradutora, não autoridade</strong> — A IA nos ajudou a converter pesquisas acadêmicas em linguagem simples. Todos os conceitos centrais estão baseados em estudos consolidados.</li>
-          <li><strong>Revisão humana</strong> — Todo o conteúdo foi revisado por membros do projeto antes da publicação.</li>
-          <li><strong>Transparência</strong> — Documentamos nosso fluxo de trabalho de IA na seção de <a href="methods.html">Métodos</a>.</li>
-          <li><strong>Não é ficção generativa</strong> — Não usamos IA para inventar histórias, estatísticas ou estudos de caso.</li>
-        </ul>
-      </div>
-
-      <p>A IA é uma ferramenta. A responsabilidade pelo modo como é usada — e os valores por trás disso — recai sobre as pessoas que fizeram este projeto.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── Team ─────────────────────────────────────────── -->
-<section class="section" id="team">
-  <div class="container">
-
-    <div data-lang="en" class="active">
-      <div class="section-header">
-        <span class="eyebrow">Team</span>
-        <h2>Who made this</h2>
-        <p>NameTheAbuse is an open educational project. Details about the team, collaborators, and contributors will be added here.</p>
-      </div>
-    </div>
-    <div data-lang="es">
-      <div class="section-header">
-        <span class="eyebrow">Equipo</span>
-        <h2>Quién hizo esto</h2>
-        <p>NameTheAbuse es un proyecto educativo abierto. Los detalles sobre el equipo, colaboradores y contribuyentes se añadirán aquí.</p>
-      </div>
-    </div>
-    <div data-lang="zh">
-      <div class="section-header">
-        <span class="eyebrow">团队</span>
-        <h2>谁制作了这个</h2>
-        <p>NameTheAbuse 是一个开放的教育项目。有关团队、合作者和贡献者的详细信息将在此处添加。</p>
-      </div>
-    </div>
-    <div data-lang="pt">
-      <div class="section-header">
-        <span class="eyebrow">Equipe</span>
-        <h2>Quem fez isso</h2>
-        <p>NameTheAbuse é um projeto educacional aberto. Detalhes sobre a equipe, colaboradores e contribuidores serão adicionados aqui.</p>
-      </div>
-    </div>
-
-    <div class="highlight-box" style="max-width: 600px; margin: 0 auto;">
-      <div data-lang="en" class="active">
-        <p style="font-size: 1.05rem; color: var(--text-muted);">This project was built in the open, with care. If you are a researcher, educator, translator, or advocate who wants to contribute, this space is for you.</p>
-        <p style="margin-top: 1rem;"><span class="tag">Open Project</span> <span class="tag">Education</span> <span class="tag">Community</span></p>
-      </div>
-      <div data-lang="es">
-        <p style="font-size: 1.05rem; color: var(--text-muted);">Este proyecto fue construido de forma abierta, con cuidado. Si eres investigador/a, educador/a, traductor/a o activista que quiere contribuir, este espacio es para ti.</p>
-        <p style="margin-top: 1rem;"><span class="tag">Proyecto abierto</span> <span class="tag">Educación</span> <span class="tag">Comunidad</span></p>
-      </div>
-      <div data-lang="zh">
-        <p style="font-size: 1.05rem; color: var(--text-muted);">本项目以开放、用心的方式构建。如果您是研究人员、教育工作者、翻译或倡导者，想要贡献力量，这里就是为您准备的。</p>
-        <p style="margin-top: 1rem;"><span class="tag">开放项目</span> <span class="tag">教育</span> <span class="tag">社区</span></p>
-      </div>
-      <div data-lang="pt">
-        <p style="font-size: 1.05rem; color: var(--text-muted);">Este projeto foi construído de forma aberta, com cuidado. Se você é pesquisador/a, educador/a, tradutor/a ou defensor/a que quer contribuir, este espaço é para você.</p>
-        <p style="margin-top: 1rem;"><span class="tag">Projeto Aberto</span> <span class="tag">Educação</span> <span class="tag">Comunidade</span></p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── Footer ────────────────────────────────────────── -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo">Name<span>The</span>Abuse</a>
-        <div data-lang="en" class="active"><p>A free, open educational resource on abuse, control, and gender-based violence.</p></div>
-        <div data-lang="es"><p>Un recurso educativo gratuito y abierto sobre el abuso, el control y la violencia de género.</p></div>
-        <div data-lang="zh"><p>一个关于虐待、控制和基于性别暴力的免费开放教育资源。</p></div>
-        <div data-lang="pt"><p>Um recurso educacional gratuito e aberto sobre abuso, controle e violência de gênero.</p></div>
-      </div>
-
-      <div class="footer-col">
-        <h4>Pages</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="what-is-abuse.html">What is Abuse?</a></li>
-          <li><a href="red-flags.html">Red Flags</a></li>
-          <li><a href="structural-violence.html">Structural Violence</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>More</h4>
-        <ul>
-          <li><a href="methods.html">Methods / AI</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="about.html#team">Team</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>
-          <div data-lang="en" class="active">Need help now?</div>
-          <div data-lang="es">¿Necesitas ayuda ahora?</div>
-          <div data-lang="zh">现在需要帮助？</div>
-          <div data-lang="pt">Precisa de ajuda agora?</div>
-        </h4>
-        <a href="resources.html" class="crisis-badge">
-          <div data-lang="en" class="active">Go to Resources</div>
-          <div data-lang="es">Ir a recursos</div>
-          <div data-lang="zh">前往资源</div>
-          <div data-lang="pt">Ir para Recursos</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 NameTheAbuse. Open educational resource.</p>
-      <p>
-        <span data-lang="en" class="active">Not a crisis service. If you are in danger, contact local emergency services.</span>
-        <span data-lang="es">No es un servicio de crisis. Si estás en peligro, contacta los servicios de emergencia locales.</span>
-        <span data-lang="zh">非危机服务。如果您处于危险中，请联系当地紧急服务。</span>
-        <span data-lang="pt">Não é um serviço de crise. Se você estiver em perigo, contate os serviços de emergência locais.</span>
-      </p>
-    </div>
-  </div>
-</footer>
-
-<script src="nav.js"></script>
+  <script src="nav.js"></script>
 </body>
 </html>

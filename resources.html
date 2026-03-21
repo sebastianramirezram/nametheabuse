@@ -437,6 +437,16 @@
   </footer>
 
   <script src="nav.js"></script>
-  <script>fetch('https://api.countapi.xyz/hit/nametheabuse/visits');</script>
+  <script>
+    fetch('https://xvciykkhrgqfkudtxokp.supabase.co/rest/v1/page_views', {
+      method: 'POST',
+      headers: {
+        'apikey': 'sb_publishable_Z68fhkNA2GWNMEOOrP0bEQ_aJwfzhsg',
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ page: window.location.pathname })
+    });
+  </script>
 </body>
 </html>

@@ -4,54 +4,415 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Red Flags — NameTheAbuse</title>
-  <meta name="description" content="Recognize the warning signs of abusive and controlling relationships — jealousy, isolation, phone monitoring, financial control, and more." />
+  <meta name="description" content="Recognize the warning signs of controlling and abusive relationships — jealousy, isolation, gaslighting, financial control, and more." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .accordion-item {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      margin-bottom: 0.75rem;
-      overflow: hidden;
-      background: var(--white);
+
+    /* ── Page-level overrides ──────────────────────── */
+
+    .rf-hero {
+      padding: 5rem 0 3.5rem;
+      text-align: center;
+      background: linear-gradient(160deg,
+        rgba(199, 184, 234, 0.15) 0%,
+        rgba(168, 197, 218, 0.12) 55%,
+        transparent 100%);
+      border-bottom: 1px solid var(--border);
     }
-    .accordion-btn {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 1.25rem 1.5rem;
-      text-align: left;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      transition: background var(--transition);
-    }
-    .accordion-btn:hover { background: var(--bg-alt); }
-    .accordion-btn.open { background: rgba(168, 197, 218, 0.15); }
-    .accordion-chevron {
-      font-style: normal;
+
+    .rf-hero .subtitle {
       font-size: 1.1rem;
-      transition: transform 0.25s ease;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 1rem auto 0;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* ── Intro block ───────────────────────────────── */
+
+    .intro-block {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .intro-block p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 1.1rem;
+    }
+
+    /* ── "Might feel normal" section ──────────────── */
+
+    .normal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .normal-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--secondary);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.4rem;
+    }
+
+    .normal-item .label-said {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .normal-item .said {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+
+    .normal-item .label-real {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7C6BA8;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .normal-item .real {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ── Red Flag Cards ────────────────────────────── */
+
+    .rf-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .rf-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 1.5rem;
+      transition: box-shadow var(--transition);
+    }
+
+    .rf-card:hover { box-shadow: 0 6px 22px var(--shadow); }
+
+    .rf-card:nth-child(3n+1) { border-left-color: var(--primary); }
+    .rf-card:nth-child(3n+2) { border-left-color: var(--secondary); }
+    .rf-card:nth-child(3n+3) { border-left-color: var(--accent); }
+
+    .rf-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .rf-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.2rem 0.6rem;
+      white-space: nowrap;
+      margin-top: 0.3rem;
       flex-shrink: 0;
     }
-    .accordion-btn.open .accordion-chevron { transform: rotate(180deg); }
-    .accordion-body {
-      display: none;
-      padding: 0 1.5rem 1.5rem;
-      border-top: 1px solid var(--border);
+
+    .rf-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.3;
     }
-    .accordion-body.open { display: block; }
-    .accordion-body p { margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem; }
-    .accordion-body ul { margin-top: 0.75rem; color: var(--text-muted); font-size: 0.95rem; }
-    .accordion-body .callout { margin-top: 1rem; }
+
+    .rf-card .rf-body {
+      font-size: 0.97rem;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .rf-why {
+      background: var(--bg-alt);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.1rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .rf-why strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .rf-reflect {
+      background: rgba(199, 184, 234, 0.14);
+      border-left: 3px solid var(--secondary);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 0.85rem 1.1rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    .rf-reflect strong {
+      font-style: normal;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7C6BA8;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    /* ── Patterns section ──────────────────────────── */
+
+    .pattern-bar {
+      background: linear-gradient(135deg,
+        rgba(168, 197, 218, 0.2),
+        rgba(199, 184, 234, 0.18));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem 3rem;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .pattern-bar h2 { margin-bottom: 1rem; }
+    .pattern-bar p  { color: var(--text-muted); margin-bottom: 0; font-size: 1.02rem; max-width: 580px; margin: 0 auto; }
+
+    /* ── Hard to see section ───────────────────────── */
+
+    .hard-list {
+      max-width: 760px;
+      margin: 2rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hard-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .hard-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .hard-item h4 { margin-bottom: 0.35rem; font-size: 1rem; }
+    .hard-item p  { font-size: 0.92rem; color: var(--text-muted); margin: 0; }
+
+    /* ── Healthy section ───────────────────────────── */
+
+    .healthy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      max-width: 900px;
+      margin: 2rem auto 0;
+    }
+
+    .healthy-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.4rem;
+    }
+
+    .healthy-item .h-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .healthy-item h4 { font-size: 0.95rem; margin-bottom: 0.35rem; }
+    .healthy-item p  { font-size: 0.87rem; color: var(--text-muted); margin: 0; }
+
+    /* ── Big reflect section ───────────────────────── */
+
+    .big-reflect {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .reflect-q {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--secondary);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.75rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .reflect-q::before {
+      content: '"';
+      font-size: 2rem;
+      color: var(--secondary);
+      line-height: 0;
+      vertical-align: -0.5rem;
+      margin-right: 0.3rem;
+      opacity: 0.7;
+    }
+
+    /* ── Closing ───────────────────────────────────── */
+
+    .closing-block {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .closing-block h2 { margin-bottom: 1.25rem; }
+
+    .closing-block p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .closing-block .closing-em {
+      font-size: 1.15rem;
+      color: var(--text);
+      font-weight: 600;
+      margin-top: 1.5rem;
+    }
+
+    /* ── Support section ───────────────────────────── */
+
+    .support-block {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .ig-follow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      background: linear-gradient(135deg,
+        rgba(199, 184, 234, 0.25),
+        rgba(168, 197, 218, 0.2));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .ig-follow:hover {
+      box-shadow: 0 4px 16px var(--shadow);
+      transform: translateY(-2px);
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .ig-follow .ig-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #C7B8EA, #A8C5DA);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .resource-country {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text);
+      margin: 1.25rem 0 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .resource-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .resource-list li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding: 0.3rem 0 0.3rem 1rem;
+      border-left: 2px solid var(--border);
+      margin-bottom: 0.3rem;
+    }
+
+    .emergency-note {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: rgba(191, 216, 210, 0.2);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .rf-card { padding: 1.5rem 1.25rem 1.25rem; }
+      .pattern-bar { padding: 2rem 1.5rem; }
+    }
+
   </style>
 </head>
 <body>
 
+<!-- ── Navigation ──────────────────────────────────── -->
 <nav class="navbar" aria-label="Main navigation">
   <div class="navbar-inner">
     <a href="index.html" class="nav-logo">Name<span>The</span>Abuse</a>
@@ -78,392 +439,591 @@
   </div>
 </nav>
 
-<header class="page-header">
+<!-- ══════════════════════════════════════════════════
+     1. HERO
+     ══════════════════════════════════════════════════ -->
+<header class="rf-hero">
   <div class="container">
-    <div data-lang="en" class="active">
-      <span class="eyebrow">Warning Signs</span>
-      <h1>Red Flags in Relationships</h1>
-      <p>These are behaviors that — especially in patterns — can indicate something harmful is happening. Each one is worth taking seriously.</p>
-    </div>
-    <div data-lang="es">
-      <span class="eyebrow">Señales de advertencia</span>
-      <h1>Señales de alerta en las relaciones</h1>
-      <p>Estos son comportamientos que — especialmente en patrones — pueden indicar que algo dañino está ocurriendo. Cada uno merece ser tomado en serio.</p>
-    </div>
-    <div data-lang="zh">
-      <span class="eyebrow">警告信号</span>
-      <h1>关系中的危险信号</h1>
-      <p>这些行为——尤其是形成模式时——可能表明正在发生有害的事情。每一个都值得认真对待。</p>
-    </div>
-    <div data-lang="pt">
-      <span class="eyebrow">Sinais de Alerta</span>
-      <h1>Sinais de Alerta em Relacionamentos</h1>
-      <p>Esses são comportamentos que — especialmente em padrões — podem indicar que algo prejudicial está acontecendo. Cada um merece ser levado a sério.</p>
-    </div>
+    <span class="eyebrow">Warning Signs</span>
+    <h1>Red Flags</h1>
+    <p class="subtitle">Some things are called love when they are really control.<br>
+    Recognizing the difference is not always easy — but it always matters.</p>
   </div>
 </header>
 
+<!-- ══════════════════════════════════════════════════
+     2. INTRO
+     ══════════════════════════════════════════════════ -->
 <section class="section">
-  <div class="container" style="max-width: 820px;">
+  <div class="container">
+    <div class="intro-block">
 
-    <div class="callout callout-normal" style="margin-top:0; margin-bottom: 2.5rem;">
-      <p class="callout-label">Before you read</p>
-      <div data-lang="en" class="active">
-        <p>One red flag doesn't always mean abuse. Context matters. But if several of these feel familiar — or if one feels very familiar — that's worth pausing on. This page is here to help you think, not to diagnose anyone.</p>
+      <span class="eyebrow">Why this page exists</span>
+      <h2>Abuse is often subtle — and that's the point</h2>
+
+      <p>When most people think of abuse, they picture something extreme. Something unmistakable. But the reality is that most harmful relationship dynamics begin quietly — with small behaviors that feel reasonable, even caring, in the moment.</p>
+
+      <p>Controlling patterns don't usually announce themselves. They build gradually, becoming normalized over time until they feel like "just how this person is" or "just how relationships work." By the time something feels clearly wrong, it may have already been happening for a long time.</p>
+
+      <p>This page is not about diagnosing people or labeling relationships. It is about making patterns visible — giving language to things that many people experience but struggle to name. Because naming something is often the first step to understanding it.</p>
+
+      <div class="callout callout-normal" style="margin-top: 2rem;">
+        <p class="callout-label">Before you read</p>
+        <p>None of these behaviors exist in a vacuum. Context matters. One moment doesn't define a relationship. But <strong>patterns do</strong> — and that is what this page is about. If several of these feel familiar, that recognition is worth sitting with.</p>
       </div>
-      <div data-lang="es">
-        <p>Una señal de alerta por sí sola no siempre significa abuso. El contexto importa. Pero si varios de estos se sienten familiares — o si uno se siente muy familiar — vale la pena detenerse. Esta página está aquí para ayudarte a pensar, no para diagnosticar a nadie.</p>
-      </div>
-      <div data-lang="zh">
-        <p>一个危险信号并不总意味着虐待。背景很重要。但如果其中几个感觉很熟悉——或者某一个感觉非常熟悉——那值得停下来思考。这个页面是为了帮助你思考，而不是诊断任何人。</p>
-      </div>
-      <div data-lang="pt">
-        <p>Um sinal de alerta por si só não significa sempre abuso. O contexto importa. Mas se vários deles parecerem familiares — ou se um parecer muito familiar — vale a pena pausar. Esta página está aqui para ajudá-lo a pensar, não para diagnosticar ninguém.</p>
-      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     3. THIS MIGHT FEEL NORMAL
+     ══════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="eyebrow">Normalization</span>
+      <h2>"This might feel normal — but it's not"</h2>
+      <p>Many controlling behaviors are so common they are built into the language we use to describe relationships. Songs call jealousy romantic. Friends call possessiveness devotion. Family calls isolation protection. When something is normalized by everything around you, it becomes very hard to see as a problem.</p>
     </div>
 
-    <!-- Accordion Red Flags -->
-    <div id="red-flags-accordion">
-
-      <!-- 1. Jealousy -->
-      <div class="accordion-item">
-        <button class="accordion-btn" onclick="toggleAccordion(this)">
-          <div>
-            <div data-lang="en" class="active">Jealousy framed as love or protection</div>
-            <div data-lang="es">Celos disfrazados de amor o protección</div>
-            <div data-lang="zh">以爱或保护为名的嫉妒</div>
-            <div data-lang="pt">Ciúme disfarçado de amor ou proteção</div>
-          </div>
-          <em class="accordion-chevron">▾</em>
-        </button>
-        <div class="accordion-body">
-          <div data-lang="en" class="active">
-            <p>Phrases like "I'm jealous because I love you" or "I just don't want anyone else to have you" normalize possessiveness. Healthy love doesn't require controlling who someone talks to.</p>
-            <ul>
-              <li>Getting angry when you talk to certain people</li>
-              <li>Accusing you of flirting when you weren't</li>
-              <li>Making scenes in public out of jealousy</li>
-            </ul>
-            <div class="callout callout-reflect"><p class="callout-label">Reflect</p><p>Do you find yourself changing your behavior to avoid triggering their jealousy?</p></div>
-          </div>
-          <div data-lang="es">
-            <p>Frases como "soy celoso porque te amo" o "solo no quiero que nadie más te tenga" normalizan la posesividad. El amor sano no requiere controlar con quién habla alguien.</p>
-            <ul>
-              <li>Enojarse cuando hablas con ciertas personas</li>
-              <li>Acusarte de coquetear cuando no lo hiciste</li>
-              <li>Hacer escenas en público por celos</li>
-            </ul>
-            <div class="callout callout-reflect"><p class="callout-label">Reflexiona</p><p>¿Te encuentras cambiando tu comportamiento para evitar provocar sus celos?</p></div>
-          </div>
-          <div data-lang="zh">
-            <p>"我嫉妒是因为我爱你"或"我只是不想让别人拥有你"这类话语使占有欲正常化。健康的爱不需要控制别人跟谁说话。</p>
-            <ul>
-              <li>当你与某些人交谈时生气</li>
-              <li>在你没有调情时指责你调情</li>
-              <li>因嫉妒在公共场合制造事端</li>
-            </ul>
-            <div class="callout callout-reflect"><p class="callout-label">反思</p><p>你是否发现自己在改变行为，以避免触发他们的嫉妒？</p></div>
-          </div>
-          <div data-lang="pt">
-            <p>Frases como "tenho ciúme porque te amo" ou "só não quero que ninguém mais te tenha" normalizam a possessividade. O amor saudável não requer controlar com quem alguém fala.</p>
-            <ul>
-              <li>Ficar bravo quando você fala com certas pessoas</li>
-              <li>Acusá-lo de flertar quando não estava</li>
-              <li>Fazer cenas em público por ciúme</li>
-            </ul>
-            <div class="callout callout-reflect"><p class="callout-label">Reflita</p><p>Você se encontra mudando seu comportamento para evitar provocar o ciúme deles?</p></div>
-          </div>
-        </div>
+    <div class="normal-grid">
+      <div class="normal-item">
+        <span class="label-said">What gets said</span>
+        <p class="said">"They get jealous because they love me."</p>
+        <span class="label-real">What it can mean</span>
+        <p class="real">Jealousy as a recurring tool of control</p>
       </div>
-
-      <!-- 2. Phone checking -->
-      <div class="accordion-item">
-        <button class="accordion-btn" onclick="toggleAccordion(this)">
-          <div>
-            <div data-lang="en" class="active">Monitoring your phone or digital life</div>
-            <div data-lang="es">Vigilar tu teléfono o vida digital</div>
-            <div data-lang="zh">监控你的手机或数字生活</div>
-            <div data-lang="pt">Monitorar seu celular ou vida digital</div>
-          </div>
-          <em class="accordion-chevron">▾</em>
-        </button>
-        <div class="accordion-body">
-          <div data-lang="en" class="active">
-            <p>Privacy is a basic right in any relationship. Demanding constant access to your phone, accounts, or conversations is a form of surveillance — not love.</p>
-            <ul>
-              <li>Demanding your passwords or PINs</li>
-              <li>Reading your messages without permission</li>
-              <li>Installing tracking or monitoring software</li>
-              <li>Getting angry if you don't respond immediately</li>
-            </ul>
-          </div>
-          <div data-lang="es">
-            <p>La privacidad es un derecho básico en cualquier relación. Exigir acceso constante a tu teléfono, cuentas o conversaciones es una forma de vigilancia, no de amor.</p>
-            <ul>
-              <li>Exigir tus contraseñas o PIN</li>
-              <li>Leer tus mensajes sin permiso</li>
-              <li>Instalar software de rastreo o monitoreo</li>
-              <li>Enojarse si no respondes de inmediato</li>
-            </ul>
-          </div>
-          <div data-lang="zh">
-            <p>隐私是任何关系中的基本权利。要求持续访问你的手机、账户或对话是一种监控行为，而非爱。</p>
-            <ul>
-              <li>要求你的密码或PIN码</li>
-              <li>未经许可阅读你的消息</li>
-              <li>安装追踪或监控软件</li>
-              <li>如果你没有立即回复就生气</li>
-            </ul>
-          </div>
-          <div data-lang="pt">
-            <p>A privacidade é um direito básico em qualquer relacionamento. Exigir acesso constante ao seu celular, contas ou conversas é uma forma de vigilância — não amor.</p>
-            <ul>
-              <li>Exigir suas senhas ou PINs</li>
-              <li>Ler suas mensagens sem permissão</li>
-              <li>Instalar software de rastreamento ou monitoramento</li>
-              <li>Ficar bravo se você não responder imediatamente</li>
-            </ul>
-          </div>
-        </div>
+      <div class="normal-item">
+        <span class="label-said">What gets said</span>
+        <p class="said">"They just want to know where I am."</p>
+        <span class="label-real">What it can mean</span>
+        <p class="real">Surveillance framed as concern</p>
       </div>
-
-      <!-- 3. Location sharing -->
-      <div class="accordion-item">
-        <button class="accordion-btn" onclick="toggleAccordion(this)">
-          <div>
-            <div data-lang="en" class="active">Forced or pressured location sharing</div>
-            <div data-lang="es">Compartir ubicación forzada o bajo presión</div>
-            <div data-lang="zh">被迫或被施压共享位置</div>
-            <div data-lang="pt">Compartilhamento de localização forçado ou sob pressão</div>
-          </div>
-          <em class="accordion-chevron">▾</em>
-        </button>
-        <div class="accordion-body">
-          <div data-lang="en" class="active">
-            <p>Mutual, voluntary location sharing can be fine. But being required to share your location at all times — and facing consequences if you don't — is control, not care.</p>
-            <ul>
-              <li>"If you have nothing to hide, why won't you share your location?"</li>
-              <li>Checking your location constantly</li>
-              <li>Showing up unexpectedly to verify where you are</li>
-            </ul>
-            <div class="callout callout-reflect"><p class="callout-label">Reflect</p><p>Did you feel like you had a real choice when you agreed to share your location?</p></div>
-          </div>
-          <div data-lang="es">
-            <p>Compartir la ubicación de forma mutua y voluntaria puede estar bien. Pero que te obliguen a compartir tu ubicación en todo momento — y enfrentar consecuencias si no lo haces — es control, no cuidado.</p>
-            <ul>
-              <li>"Si no tienes nada que esconder, ¿por qué no compartes tu ubicación?"</li>
-              <li>Revisar tu ubicación constantemente</li>
-              <li>Aparecer inesperadamente para verificar dónde estás</li>
-            </ul>
-            <div class="callout callout-reflect"><p class="callout-label">Reflexiona</p><p>¿Sentiste que tenías una verdadera elección cuando aceptaste compartir tu ubicación?</p></div>
-          </div>
-          <div data-lang="zh">
-            <p>相互、自愿的位置共享可以没问题。但被要求随时共享位置——如果不这样做就会有后果——是控制，而不是关心。</p>
-            <ul>
-              <li>"如果你没什么好隐瞒的，为什么不分享你的位置？"</li>
-              <li>不断查看你的位置</li>
-              <li>意外出现以确认你在哪里</li>
-            </ul>
-            <div class="callout callout-reflect"><p class="callout-label">反思</p><p>当你同意共享位置时，你是否感觉自己有真正的选择？</p></div>
-          </div>
-          <div data-lang="pt">
-            <p>O compartilhamento mútuo e voluntário de localização pode ser normal. Mas ser obrigado a compartilhar sua localização o tempo todo — e enfrentar consequências se não o fizer — é controle, não cuidado.</p>
-            <ul>
-              <li>"Se você não tem nada a esconder, por que não compartilha sua localização?"</li>
-              <li>Verificar sua localização constantemente</li>
-              <li>Aparecer inesperadamente para verificar onde você está</li>
-            </ul>
-            <div class="callout callout-reflect"><p class="callout-label">Reflita</p><p>Você sentiu que tinha uma escolha real quando concordou em compartilhar sua localização?</p></div>
-          </div>
-        </div>
+      <div class="normal-item">
+        <span class="label-said">What gets said</span>
+        <p class="said">"They don't like my friends — but that's just them."</p>
+        <span class="label-real">What it can mean</span>
+        <p class="real">Systematic isolation from support networks</p>
       </div>
-
-      <!-- 4. Financial control -->
-      <div class="accordion-item">
-        <button class="accordion-btn" onclick="toggleAccordion(this)">
-          <div>
-            <div data-lang="en" class="active">Financial control and economic dependency</div>
-            <div data-lang="es">Control financiero y dependencia económica</div>
-            <div data-lang="zh">财务控制与经济依赖</div>
-            <div data-lang="pt">Controle financeiro e dependência econômica</div>
-          </div>
-          <em class="accordion-chevron">▾</em>
-        </button>
-        <div class="accordion-body">
-          <div data-lang="en" class="active">
-            <p>Economic abuse is one of the most effective ways to trap someone in a relationship. It can be subtle at first — "I'll take care of the finances" — before becoming restrictive.</p>
-            <ul>
-              <li>Controlling all the money and giving an "allowance"</li>
-              <li>Sabotaging employment or education</li>
-              <li>Creating debt in your name without consent</li>
-              <li>Criticizing or punishing every purchase</li>
-            </ul>
-          </div>
-          <div data-lang="es">
-            <p>El abuso económico es una de las formas más efectivas de atrapar a alguien en una relación. Puede ser sutil al principio — "yo me encargaré de las finanzas" — antes de volverse restrictivo.</p>
-            <ul>
-              <li>Controlar todo el dinero y dar una "mesada"</li>
-              <li>Sabotear el empleo o la educación</li>
-              <li>Crear deudas a tu nombre sin consentimiento</li>
-              <li>Criticar o castigar cada compra</li>
-            </ul>
-          </div>
-          <div data-lang="zh">
-            <p>经济虐待是将人困在关系中最有效的方式之一。起初可能很微妙——"我来管理财务"——然后变得具有限制性。</p>
-            <ul>
-              <li>控制所有金钱并给予"零花钱"</li>
-              <li>破坏就业或教育机会</li>
-              <li>未经同意以你的名义产生债务</li>
-              <li>批评或惩罚每一次消费</li>
-            </ul>
-          </div>
-          <div data-lang="pt">
-            <p>O abuso econômico é uma das formas mais eficazes de prender alguém em um relacionamento. Pode ser sutil no início — "eu cuido das finanças" — antes de se tornar restritivo.</p>
-            <ul>
-              <li>Controlar todo o dinheiro e dar uma "mesada"</li>
-              <li>Sabotar o emprego ou a educação</li>
-              <li>Criar dívidas em seu nome sem consentimento</li>
-              <li>Criticar ou punir cada compra</li>
-            </ul>
-          </div>
-        </div>
+      <div class="normal-item">
+        <span class="label-said">What gets said</span>
+        <p class="said">"They apologize every time. They really mean it."</p>
+        <span class="label-real">What it can mean</span>
+        <p class="real">A cycle without real change</p>
       </div>
-
-      <!-- 5. Isolation -->
-      <div class="accordion-item">
-        <button class="accordion-btn" onclick="toggleAccordion(this)">
-          <div>
-            <div data-lang="en" class="active">Isolating you from friends and family</div>
-            <div data-lang="es">Aislarte de amigos y familia</div>
-            <div data-lang="zh">将你与朋友和家人隔离</div>
-            <div data-lang="pt">Isolar você de amigos e família</div>
-          </div>
-          <em class="accordion-chevron">▾</em>
-        </button>
-        <div class="accordion-body">
-          <div data-lang="en" class="active">
-            <p>Isolation is often gradual. It may start with negative comments about your friends, then escalate to controlling who you see and when. Isolation removes your support system — making it harder to leave.</p>
-            <ul>
-              <li>Criticizing or belittling your friends and family</li>
-              <li>Making you feel guilty for spending time with others</li>
-              <li>Creating conflict with people you're close to</li>
-              <li>Insisting you spend all your free time together</li>
-            </ul>
-          </div>
-          <div data-lang="es">
-            <p>El aislamiento suele ser gradual. Puede comenzar con comentarios negativos sobre tus amigos, luego escalar hasta controlar a quién ves y cuándo. El aislamiento elimina tu red de apoyo, lo que hace más difícil salir.</p>
-            <ul>
-              <li>Criticar o menospreciar a tus amigos y familia</li>
-              <li>Hacerte sentir culpable por pasar tiempo con otros</li>
-              <li>Crear conflictos con personas cercanas a ti</li>
-              <li>Insistir en que pasen todo el tiempo libre juntos</li>
-            </ul>
-          </div>
-          <div data-lang="zh">
-            <p>孤立通常是渐进的。可能从对你朋友的负面评价开始，然后升级为控制你见谁、什么时候见。孤立会摧毁你的支持系统——让你更难离开。</p>
-            <ul>
-              <li>批评或贬低你的朋友和家人</li>
-              <li>让你因为和别人在一起而感到内疚</li>
-              <li>与你亲近的人制造冲突</li>
-              <li>坚持要求你们所有空闲时间都在一起</li>
-            </ul>
-          </div>
-          <div data-lang="pt">
-            <p>O isolamento costuma ser gradual. Pode começar com comentários negativos sobre seus amigos, depois escalar para controlar quem você vê e quando. O isolamento remove sua rede de apoio — tornando mais difícil sair.</p>
-            <ul>
-              <li>Criticar ou menosprezar seus amigos e família</li>
-              <li>Fazer você se sentir culpado por passar tempo com outros</li>
-              <li>Criar conflitos com pessoas próximas a você</li>
-              <li>Insistir em que passem todo o tempo livre juntos</li>
-            </ul>
-          </div>
-        </div>
+      <div class="normal-item">
+        <span class="label-said">What gets said</span>
+        <p class="said">"I don't want to make them angry."</p>
+        <span class="label-real">What it can mean</span>
+        <p class="real">Fear of reactions shaping your behavior</p>
       </div>
-
-      <!-- 6. Gaslighting -->
-      <div class="accordion-item">
-        <button class="accordion-btn" onclick="toggleAccordion(this)">
-          <div>
-            <div data-lang="en" class="active">Gaslighting — making you doubt your reality</div>
-            <div data-lang="es">Gaslighting — hacerte dudar de tu realidad</div>
-            <div data-lang="zh">煤气灯效应——让你怀疑自己的现实</div>
-            <div data-lang="pt">Gaslighting — fazendo você duvidar da sua realidade</div>
-          </div>
-          <em class="accordion-chevron">▾</em>
-        </button>
-        <div class="accordion-body">
-          <div data-lang="en" class="active">
-            <p>Gaslighting is a form of psychological manipulation where someone causes you to question your own memory, perception, or sanity. It often involves denial, misdirection, and contradiction.</p>
-            <ul>
-              <li>"That never happened."</li>
-              <li>"You're too sensitive."</li>
-              <li>"You're imagining things."</li>
-              <li>"Everyone agrees with me, not you."</li>
-            </ul>
-            <div class="callout callout-reflect"><p class="callout-label">Reflect</p><p>Do you often find yourself wondering whether your feelings are "reasonable" or "too much"?</p></div>
-          </div>
-          <div data-lang="es">
-            <p>El gaslighting es una forma de manipulación psicológica en la que alguien te hace cuestionar tu propia memoria, percepción o cordura. A menudo implica negación, redirección y contradicción.</p>
-            <ul>
-              <li>"Eso nunca pasó."</li>
-              <li>"Eres demasiado sensible."</li>
-              <li>"Te lo estás imaginando."</li>
-              <li>"Todos están de acuerdo conmigo, no contigo."</li>
-            </ul>
-            <div class="callout callout-reflect"><p class="callout-label">Reflexiona</p><p>¿A menudo te preguntas si tus sentimientos son "razonables" o "demasiado"?</p></div>
-          </div>
-          <div data-lang="zh">
-            <p>煤气灯效应是一种心理操纵形式，让你质疑自己的记忆、感知或理智。它通常涉及否认、转移和矛盾。</p>
-            <ul>
-              <li>"那从来没有发生过。"</li>
-              <li>"你太敏感了。"</li>
-              <li>"你在想象事情。"</li>
-              <li>"每个人都同意我，而不是你。"</li>
-            </ul>
-            <div class="callout callout-reflect"><p class="callout-label">反思</p><p>你是否经常发现自己在想自己的感受是否"合理"或"太多了"？</p></div>
-          </div>
-          <div data-lang="pt">
-            <p>Gaslighting é uma forma de manipulação psicológica onde alguém faz você questionar sua própria memória, percepção ou sanidade. Geralmente envolve negação, desvio e contradição.</p>
-            <ul>
-              <li>"Isso nunca aconteceu."</li>
-              <li>"Você é muito sensível."</li>
-              <li>"Você está imaginando coisas."</li>
-              <li>"Todo mundo concorda comigo, não com você."</li>
-            </ul>
-            <div class="callout callout-reflect"><p class="callout-label">Reflita</p><p>Você frequentemente se pergunta se seus sentimentos são "razoáveis" ou "demais"?</p></div>
-          </div>
-        </div>
+      <div class="normal-item">
+        <span class="label-said">What gets said</span>
+        <p class="said">"Maybe I am too sensitive."</p>
+        <span class="label-real">What it can mean</span>
+        <p class="real">Gaslighting absorbing into self-perception</p>
       </div>
-
-    </div><!-- end accordion -->
-
-    <div class="text-center mt-4">
-      <a href="resources.html" class="btn btn-primary">
-        <div data-lang="en" class="active">Find Support</div>
-        <div data-lang="es">Encontrar apoyo</div>
-        <div data-lang="zh">寻找支持</div>
-        <div data-lang="pt">Encontrar Apoio</div>
-      </a>
-      <a href="what-is-abuse.html" class="btn btn-secondary" style="margin-left:1rem;">
-        <div data-lang="en" class="active">What is Abuse?</div>
-        <div data-lang="es">¿Qué es el abuso?</div>
-        <div data-lang="zh">什么是虐待？</div>
-        <div data-lang="pt">O que é Abuso?</div>
-      </a>
     </div>
 
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════════════
+     4. RED FLAGS (12 cards)
+     ══════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="eyebrow">Common Warning Signs</span>
+      <h2>12 Red Flags to Know</h2>
+      <p>Each one is described with context, a note on why it can be harmful, and a question to reflect on.</p>
+    </div>
+
+    <div class="rf-grid">
+
+      <!-- 01 -->
+      <div class="rf-card">
+        <div class="rf-card-header">
+          <span class="rf-num">01</span>
+          <h3>Jealousy framed as care or love</h3>
+        </div>
+        <p class="rf-body">Jealousy is presented as proof of love — "I only get this way because I care so much about you." It may seem flattering at first, but when jealousy becomes a recurring source of tension, accusations, or punishment, it stops being an emotion and becomes a control mechanism.</p>
+        <div class="rf-why">
+          <strong>Why it's harmful</strong>
+          Jealousy-based control trains you to manage the other person's emotional reactions by limiting your own behavior — who you talk to, what you wear, where you go. Over time, you may stop doing things not because you want to, but because you're trying to avoid a reaction.
+        </div>
+        <div class="rf-reflect">
+          <strong>Pause and reflect</strong>
+          Have you ever changed something about yourself — your clothing, your social plans, your tone — to prevent their jealousy from being triggered?
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="rf-card">
+        <div class="rf-card-header">
+          <span class="rf-num">02</span>
+          <h3>Phone checking and digital monitoring</h3>
+        </div>
+        <p class="rf-body">This includes reading your messages, demanding passwords, going through your photos, checking your call history, or monitoring your activity on social media. It may be framed as "I just want to feel secure" or "if you have nothing to hide, this shouldn't bother you."</p>
+        <div class="rf-why">
+          <strong>Why it's harmful</strong>
+          Privacy is not secrecy. Everyone is entitled to personal space, even within a relationship. Digital monitoring sends a constant message that you are not trusted — and it can escalate into more invasive surveillance over time.
+        </div>
+        <div class="rf-reflect">
+          <strong>Pause and reflect</strong>
+          Do you feel anxious when a message arrives on your phone while they are nearby? Do you delete conversations not because they're wrong, but because you anticipate a reaction?
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="rf-card">
+        <div class="rf-card-header">
+          <span class="rf-num">03</span>
+          <h3>Location tracking and constant accountability</h3>
+        </div>
+        <p class="rf-body">Expecting to know where you are at all times — through shared location apps, constant check-in texts, or showing up unexpectedly to verify your whereabouts. Sometimes this begins as a mutual agreement, but becomes unilateral or mandatory over time.</p>
+        <div class="rf-why">
+          <strong>Why it's harmful</strong>
+          Constant tracking removes autonomy and creates an environment of surveillance. It signals that your movements are subject to approval — which is a feature of control, not partnership.
+        </div>
+        <div class="rf-reflect">
+          <strong>Pause and reflect</strong>
+          Did you feel like you had a genuine choice when location sharing started? What would happen if you turned it off?
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="rf-card">
+        <div class="rf-card-header">
+          <span class="rf-num">04</span>
+          <h3>Social isolation — separating you from others</h3>
+        </div>
+        <p class="rf-body">This begins subtly: negative comments about your friends, tension before you spend time with family, complaints that you prefer others over them. Over time, it can become explicit — forbidding contact, creating conflict, or making social plans so stressful that staying home feels easier.</p>
+        <div class="rf-why">
+          <strong>Why it's harmful</strong>
+          Social isolation is one of the most documented tactics in abusive relationships because it works. When your support network shrinks, so does your access to outside perspectives, validation, and practical help — all of which you may need if you decide to leave.
+        </div>
+        <div class="rf-reflect">
+          <strong>Pause and reflect</strong>
+          Are there people you used to be close to that you rarely see now? Did that change happen gradually, or after a specific turning point in the relationship?
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="rf-card">
+        <div class="rf-card-header">
+          <span class="rf-num">05</span>
+          <h3>Guilt for setting boundaries</h3>
+        </div>
+        <p class="rf-body">When you express a need — time alone, a limit on a type of conversation, discomfort with a certain behavior — the response is not acknowledgment, but punishment. This can look like sulking, anger, accusations of not caring, or framing your boundary as an attack.</p>
+        <div class="rf-why">
+          <strong>Why it's harmful</strong>
+          Boundaries are not rejection. When someone consistently responds to your needs with guilt or anger, you learn to stop expressing them. Over time, your needs disappear from the relationship — not because they were resolved, but because they became too costly to voice.
+        </div>
+        <div class="rf-reflect">
+          <strong>Pause and reflect</strong>
+          Is there something you genuinely want or need in this relationship that you've stopped asking for? What made you stop?
+        </div>
+      </div>
+
+      <!-- 06 -->
+      <div class="rf-card">
+        <div class="rf-card-header">
+          <span class="rf-num">06</span>
+          <h3>Gaslighting — reversing blame, distorting reality</h3>
+        </div>
+        <p class="rf-body">Gaslighting is when someone causes you to doubt your own perception of events — denying things that happened, reframing your reactions as irrational, insisting that what you experienced isn't what occurred. Common phrases include: <em>"That never happened," "You're too sensitive," "You're imagining things,"</em> or <em>"Everyone agrees with me, not you."</em></p>
+        <div class="rf-why">
+          <strong>Why it's harmful</strong>
+          Over time, gaslighting erodes your trust in your own memory and judgment. When you can no longer trust your own perception of events, you become more dependent on the other person to define what is real — which is precisely the dynamic that gaslighting creates.
+        </div>
+        <div class="rf-reflect">
+          <strong>Pause and reflect</strong>
+          Do you frequently find yourself wondering whether your feelings or recollections are "actually" correct? Do you leave conversations feeling confused about what just happened?
+        </div>
+      </div>
+
+      <!-- 07 -->
+      <div class="rf-card">
+        <div class="rf-card-header">
+          <span class="rf-num">07</span>
+          <h3>Conditional affection — love as reward or punishment</h3>
+        </div>
+        <p class="rf-body">Warmth, affection, or approval is given when you comply, and withdrawn when you don't. This can be obvious — cold silences after disagreements — or subtle, like being noticeably less kind when you've done something they disliked.</p>
+        <div class="rf-why">
+          <strong>Why it's harmful</strong>
+          When affection is conditional, you begin to shape your behavior around earning it. This creates a relationship dynamic where love feels like something you have to perform for, rather than something that exists unconditionally between two people.
+        </div>
+        <div class="rf-reflect">
+          <strong>Pause and reflect</strong>
+          Do you feel like their warmth toward you depends on your behavior? Do you find yourself adjusting what you say or do in order to stay in their good graces?
+        </div>
+      </div>
+
+      <!-- 08 -->
+      <div class="rf-card">
+        <div class="rf-card-header">
+          <span class="rf-num">08</span>
+          <h3>Pressure disguised as closeness or intimacy</h3>
+        </div>
+        <p class="rf-body">Pressure to share things you're not ready to share — physically, emotionally, or digitally. It may be framed as wanting to be close: <em>"If you trusted me, you'd tell me," "I thought we didn't have secrets,"</em> or <em>"Other couples do this."</em></p>
+        <div class="rf-why">
+          <strong>Why it's harmful</strong>
+          Real intimacy is built on consent and readiness, not on persuasion or guilt. When someone uses the language of closeness to override your boundaries, they are redefining the relationship on their terms — not yours.
+        </div>
+        <div class="rf-reflect">
+          <strong>Pause and reflect</strong>
+          Have you ever agreed to something you weren't comfortable with because not agreeing felt like it would damage the relationship? How did that feel afterward?
+        </div>
+      </div>
+
+      <!-- 09 -->
+      <div class="rf-card">
+        <div class="rf-card-header">
+          <span class="rf-num">09</span>
+          <h3>Financial control and economic dependency</h3>
+        </div>
+        <p class="rf-body">This includes controlling access to money, criticizing every purchase, insisting on managing all finances, sabotaging employment or educational opportunities, or creating financial dependency as a structural feature of the relationship. It often begins as one person "taking care of things."</p>
+        <div class="rf-why">
+          <strong>Why it's harmful</strong>
+          Financial control is one of the most effective barriers to leaving a harmful relationship. When someone doesn't have independent access to money, employment, or economic information, their ability to make autonomous choices — including the choice to leave — becomes severely limited.
+        </div>
+        <div class="rf-reflect">
+          <strong>Pause and reflect</strong>
+          Do you have independent access to money, accounts, and financial information? If the relationship ended tomorrow, would you have the resources to be okay?
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="rf-card">
+        <div class="rf-card-header">
+          <span class="rf-num">10</span>
+          <h3>Humiliation and disrespect — public or private</h3>
+        </div>
+        <p class="rf-body">Put-downs, mockery, sarcasm that diminishes, or cruel comments disguised as jokes — especially in front of others. This may be followed by "you're so sensitive" or "I was just kidding," which reframes the impact as your problem rather than their behavior.</p>
+        <div class="rf-why">
+          <strong>Why it's harmful</strong>
+          Repeated humiliation — even when framed as humor — damages self-esteem and creates a power imbalance. When one person consistently diminishes the other, it communicates that one of you is less worthy of respect. Over time, that message is internalized.
+        </div>
+        <div class="rf-reflect">
+          <strong>Pause and reflect</strong>
+          Have you found yourself laughing along with jokes that actually hurt you? Do you feel smaller around this person than you do around others?
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="rf-card">
+        <div class="rf-card-header">
+          <span class="rf-num">11</span>
+          <h3>Repeated apologies without change</h3>
+        </div>
+        <p class="rf-body">The cycle of tension, incident, apology, and honeymoon phase is well documented in abusive relationship research. Apologies are real and often deeply felt — but if the behavior that prompted the apology continues, the apology is part of the pattern, not a break from it.</p>
+        <div class="rf-why">
+          <strong>Why it's harmful</strong>
+          Apologies without behavioral change maintain the status quo while giving the relationship the feeling of progress. They can also shift responsibility — once someone has apologized, raising the issue again can feel unfair, even when the problem has not actually been resolved.
+        </div>
+        <div class="rf-reflect">
+          <strong>Pause and reflect</strong>
+          Think of the last significant apology in this relationship. Did anything actually change afterward, or did the same dynamic return?
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="rf-card">
+        <div class="rf-card-header">
+          <span class="rf-num">12</span>
+          <h3>Fear of their reactions — walking on eggshells</h3>
+        </div>
+        <p class="rf-body">You find yourself carefully calculating what to say, what not to mention, when to bring something up, and how to phrase things — not to communicate clearly, but to avoid triggering a reaction. This can become so automatic that you stop recognizing it as something external to you.</p>
+        <div class="rf-why">
+          <strong>Why it's harmful</strong>
+          Fear of reactions is one of the clearest signals that safety — emotional or physical — is not present in the relationship. When you spend significant energy managing another person's emotions to protect yourself, you are no longer in a partnership of equals.
+        </div>
+        <div class="rf-reflect">
+          <strong>Pause and reflect</strong>
+          Is there something happening in your life right now that you haven't told this person about — not because it isn't relevant, but because you're worried about how they'll react?
+        </div>
+      </div>
+
+    </div><!-- end rf-grid -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     5. PATTERNS NOT MOMENTS
+     ══════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="pattern-bar">
+      <span class="eyebrow">Important context</span>
+      <h2>Red flags are patterns — not isolated moments</h2>
+      <p>Everyone has difficult moments. A single instance of jealousy or a bad argument does not define a relationship. What matters is whether these behaviors repeat, escalate, or exist alongside a general dynamic where one person's comfort and autonomy is consistently compromised. The question is not "did this happen once?" but <strong>"does this keep happening, and does it make me feel unsafe or less like myself?"</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     6. WHY THESE SIGNS ARE HARD TO SEE
+     ══════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="eyebrow">Understanding the difficulty</span>
+      <h2>Why these signs are hard to see</h2>
+      <p>It is not naivety or weakness that makes red flags hard to recognize. There are structural and social reasons why harmful patterns stay invisible for so long.</p>
+    </div>
+
+    <div class="hard-list">
+
+      <div class="hard-item">
+        <div class="hard-icon">🌐</div>
+        <div>
+          <h4>Social norms validate controlling behaviors</h4>
+          <p>Movies, music, and cultural narratives regularly present jealousy as romantic, possessiveness as devotion, and intensity as passion. When the culture around you calls something love, it is genuinely difficult to identify it as harm.</p>
+        </div>
+      </div>
+
+      <div class="hard-item">
+        <div class="hard-icon">⚖️</div>
+        <div>
+          <h4>Gender expectations create blind spots</h4>
+          <p>Certain controlling behaviors are gendered in how they're perceived — some are normalized for men ("he's just protective"), some minimized for women ("she's just emotional"), and some made invisible for people outside the gender binary. These expectations shape what we allow ourselves to name as a problem.</p>
+        </div>
+      </div>
+
+      <div class="hard-item">
+        <div class="hard-icon">🔄</div>
+        <div>
+          <h4>Gradual escalation disguises change</h4>
+          <p>Controlling behaviors rarely begin at their worst. They escalate slowly, giving time for each new behavior to be normalized before the next one appears. By the time something feels clearly wrong, you may have already adapted to a reality that would have seemed unacceptable at the start.</p>
+        </div>
+      </div>
+
+      <div class="hard-item">
+        <div class="hard-icon">💛</div>
+        <div>
+          <h4>Love makes harm harder to accept</h4>
+          <p>The feelings in a relationship — care, connection, shared history — are real, even when the dynamic is harmful. Naming something as abuse does not erase what was good or what you felt. But it does mean holding both truths at once, which is genuinely difficult.</p>
+        </div>
+      </div>
+
+      <div class="hard-item">
+        <div class="hard-icon">🏠</div>
+        <div>
+          <h4>Practical barriers make leaving complicated</h4>
+          <p>Housing, finances, shared children, immigration status, social ties, and family expectations all create real obstacles. Recognizing that something is harmful is not the same as being able to change it immediately — and that gap is not a personal failure.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     7. HEALTHY RELATIONSHIPS
+     ══════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="eyebrow">The other side</span>
+      <h2>What healthy relationships include</h2>
+      <p>Understanding red flags is easier when there is a clear picture of what the alternative looks like. Healthy relationships are not perfect — but they share some consistent features.</p>
+    </div>
+
+    <div class="healthy-grid">
+
+      <div class="healthy-item">
+        <span class="h-icon">🔓</span>
+        <h4>Autonomy</h4>
+        <p>Both people maintain independent lives, friendships, interests, and identities. Neither person has to give up who they are to be in the relationship.</p>
+      </div>
+
+      <div class="healthy-item">
+        <span class="h-icon">🤝</span>
+        <h4>Mutual respect</h4>
+        <p>Disagreements happen, but both people treat each other with basic dignity. Humiliation, contempt, or cruelty — even as jokes — are absent.</p>
+      </div>
+
+      <div class="healthy-item">
+        <span class="h-icon">🛡️</span>
+        <h4>Safety to say no</h4>
+        <p>Setting a limit, declining something, or expressing discomfort does not result in punishment, silence, or withdrawal of affection.</p>
+      </div>
+
+      <div class="healthy-item">
+        <span class="h-icon">🔎</span>
+        <h4>Transparency, not surveillance</h4>
+        <p>Both people share information willingly, from a place of openness — not because they are monitored or required to account for everything they do.</p>
+      </div>
+
+      <div class="healthy-item">
+        <span class="h-icon">💬</span>
+        <h4>Honest communication</h4>
+        <p>Conflict is addressed directly. Neither person has to manage the other's emotional reactions so carefully that honest conversation becomes impossible.</p>
+      </div>
+
+      <div class="healthy-item">
+        <span class="h-icon">💰</span>
+        <h4>Economic fairness</h4>
+        <p>Financial decisions are made together, and both people maintain reasonable access to resources. Dependency is not used as leverage.</p>
+      </div>
+
+      <div class="healthy-item">
+        <span class="h-icon">🌱</span>
+        <h4>Space to grow and change</h4>
+        <p>Both people can evolve — in interests, beliefs, careers, and friendships — without it threatening the relationship or becoming a source of conflict.</p>
+      </div>
+
+      <div class="healthy-item">
+        <span class="h-icon">✅</span>
+        <h4>Accountability</h4>
+        <p>When someone causes harm, they acknowledge it and change. Apologies are followed by different behavior, not by the same cycle repeating.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     8. PAUSE AND REFLECT
+     ══════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="eyebrow">Take a moment</span>
+      <h2>Pause and reflect</h2>
+      <p>These questions are not tests. There are no right answers. They are invitations to pay attention to your own experience.</p>
+    </div>
+
+    <div class="big-reflect">
+
+      <div class="reflect-q">
+        Is there something you used to do — a hobby, a friendship, a way of dressing — that you no longer do, and the reason is somehow connected to this relationship?
+      </div>
+
+      <div class="reflect-q">
+        When something uncomfortable happens between you, do you usually end up questioning yourself first — or do you feel heard and taken seriously?
+      </div>
+
+      <div class="reflect-q">
+        Do you feel more like yourself around this person, or less? Can you think of specific moments that support either answer?
+      </div>
+
+      <div class="reflect-q">
+        If a close friend described to you exactly what you experience in this relationship, what would you tell them?
+      </div>
+
+      <div class="reflect-q">
+        Is there something you've normalized in this relationship that you wouldn't accept if you heard about it happening to someone else?
+      </div>
+
+      <div class="reflect-q">
+        When you think about the future of this relationship, does it feel like possibility — or does part of you feel tired?
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     9. CLOSING
+     ══════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="closing-block">
+
+      <span class="eyebrow">What comes next</span>
+      <h2>Discomfort is information worth listening to</h2>
+
+      <p>If reading this page brought up something — a memory, a feeling, a quiet recognition — that is worth paying attention to. Discomfort is not proof that something is wrong, but it is a signal that deserves to be heard, not dismissed.</p>
+
+      <p>You don't have to have everything figured out before you act on it. You don't have to be certain before you talk to someone. And you don't have to be in the most extreme situation to deserve support.</p>
+
+      <p>The work of naming something is not small. It often takes time, and it rarely happens all at once. But it is the beginning of clarity — and clarity is the beginning of choice.</p>
+
+      <div class="callout callout-reflect" style="text-align:left; margin-top: 2rem;">
+        <p class="callout-label">Remember</p>
+        <p class="closing-em">Understanding is the first step. Naming is the next one.<br>And neither of those steps has to be taken alone.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     10. SUPPORT + INSTAGRAM
+     ══════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="eyebrow">You are not alone</span>
+      <h2>Support &amp; Resources</h2>
+    </div>
+
+    <div class="support-block">
+
+      <a href="https://www.instagram.com/NameTheAbuse" target="_blank" rel="noopener" class="ig-follow">
+        <div class="ig-dot">📷</div>
+        <span>Follow and share &nbsp;<strong>@NameTheAbuse</strong>&nbsp; — share with someone who might need it</span>
+      </a>
+
+      <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1.5rem;">If you or someone you know needs support, these organizations offer free, confidential help:</p>
+
+      <p class="resource-country">🇺🇸 United States</p>
+      <ul class="resource-list">
+        <li>National Domestic Violence Hotline — call or chat available</li>
+        <li>Instagram: @ndvh_official</li>
+        <li>Instagram: @loveisrespectofficial</li>
+      </ul>
+
+      <p class="resource-country">🇨🇴 Colombia</p>
+      <ul class="resource-list">
+        <li>Línea 155 — national hotline for gender-based violence</li>
+        <li>Instagram: @policiadecolombia</li>
+        <li>Instagram: @minigualdadcol</li>
+      </ul>
+
+      <p class="resource-country">🌍 Global</p>
+      <ul class="resource-list">
+        <li>UN Women — unwomen.org</li>
+        <li>Instagram: @unwomen</li>
+        <li>Instagram: @who</li>
+      </ul>
+
+      <div class="emergency-note">
+        If you are in immediate danger, contact your local emergency services.<br>
+        <strong>Reaching out for help is not weakness. It is a step toward safety and clarity.</strong>
+      </div>
+
+    </div>
+
+    <a href="https://www.instagram.com/NameTheAbuse" target="_blank" rel="noopener" class="ig-follow" style="max-width:760px; margin: 2rem auto 0; display:flex;">
+      <div class="ig-dot">📷</div>
+      <span>Follow and share &nbsp;<strong>@NameTheAbuse</strong>&nbsp; — share with someone who might need it</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────── -->
 <footer>
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo">Name<span>The</span>Abuse</a>
         <div data-lang="en" class="active"><p>A free, open educational resource on abuse, control, and gender-based violence.</p></div>
-        <div data-lang="es"><p>Un recurso educativo gratuito y abierto sobre el abuso, el control y la violencia de género.</p></div>
-        <div data-lang="zh"><p>一个关于虐待、控制和基于性别暴力的免费开放教育资源。</p></div>
-        <div data-lang="pt"><p>Um recurso educacional gratuito e aberto sobre abuso, controle e violência de gênero.</p></div>
+        <div data-lang="es"><p>Un recurso educativo gratuito y abierto.</p></div>
+        <div data-lang="zh"><p>免费开放的教育资源。</p></div>
+        <div data-lang="pt"><p>Um recurso educacional gratuito e aberto.</p></div>
       </div>
       <div class="footer-col">
         <h4>Pages</h4>
@@ -479,36 +1039,32 @@
         <ul>
           <li><a href="methods.html">Methods / AI</a></li>
           <li><a href="resources.html">Resources</a></li>
+          <li><a href="campaign.html">Campaign</a></li>
           <li><a href="about.html#team">Team</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4><div data-lang="en" class="active">Need help now?</div><div data-lang="es">¿Necesitas ayuda?</div><div data-lang="zh">需要帮助？</div><div data-lang="pt">Precisa de ajuda?</div></h4>
-        <a href="resources.html" class="crisis-badge"><div data-lang="en" class="active">Go to Resources</div><div data-lang="es">Ir a recursos</div><div data-lang="zh">前往资源</div><div data-lang="pt">Ir para Recursos</div></a>
+        <h4>
+          <div data-lang="en" class="active">Need help now?</div>
+          <div data-lang="es">¿Necesitas ayuda?</div>
+          <div data-lang="zh">需要帮助？</div>
+          <div data-lang="pt">Precisa de ajuda?</div>
+        </h4>
+        <a href="resources.html" class="crisis-badge">
+          <div data-lang="en" class="active">Go to Resources</div>
+          <div data-lang="es">Ir a recursos</div>
+          <div data-lang="zh">前往资源</div>
+          <div data-lang="pt">Ir para Recursos</div>
+        </a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 NameTheAbuse. Open educational resource.</p>
-      <p><span data-lang="en" class="active">Not a crisis service.</span><span data-lang="es">No es un servicio de crisis.</span><span data-lang="zh">非危机服务。</span><span data-lang="pt">Não é um serviço de crise.</span></p>
+      <p><span data-lang="en" class="active">Not a crisis service. If you are in danger, contact local emergency services.</span></p>
     </div>
   </div>
 </footer>
 
 <script src="nav.js"></script>
-<script>
-  function toggleAccordion(btn) {
-    const body = btn.nextElementSibling;
-    const isOpen = btn.classList.contains('open');
-
-    // Close all
-    document.querySelectorAll('.accordion-btn').forEach(b => b.classList.remove('open'));
-    document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('open'));
-
-    if (!isOpen) {
-      btn.classList.add('open');
-      body.classList.add('open');
-    }
-  }
-</script>
 </body>
 </html>

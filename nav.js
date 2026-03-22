@@ -12,6 +12,10 @@
       node.classList.toggle('active', node.getAttribute('data-lang') === lang);
     });
 
+    document.querySelectorAll('.accordion-panel.is-open').forEach(function (panel) {
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    });
+
     document.querySelectorAll('.lang-btn').forEach(function (button) {
       var active = button.getAttribute('data-lang-target') === lang;
       button.setAttribute('aria-pressed', String(active));
@@ -60,6 +64,7 @@
 
     trigger.setAttribute('aria-expanded', String(open));
     panel.hidden = false;
+    void panel.offsetHeight; // force reflow so scrollHeight is accurate
 
     if (open) {
       panel.classList.add('is-open');
